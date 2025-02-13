@@ -1,4 +1,5 @@
 baseURL = 'https://roboticist-git.github.io/Despairendipity/'
+canonifyURLs = true
 languageCode = 'en-us'
 title = 'Despairendipity'
 theme = "algorithmica"

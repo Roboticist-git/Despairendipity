@@ -37,7 +37,7 @@
           {{ $this := . }}
           {{ range .Params.Prerequisites }}
             {{ with $this.GetPage . }}
-              <span><a href='{{.Permalink}}'>{{ .Title }}</a></span>
+              <span><a href='{{ .Permalink | relURL }}'>{{ .Title }}</a></span>
             {{ end }}
           {{ end }}
         </div>
@@ -46,7 +46,7 @@
         <div>
           <span>{{ T "translations" }}</span>
           {{ range .Translations }}
-            <span><a href="{{ .Permalink }}">{{ .Lang }}: {{ .Title }}</a></span>
+            <span><a href="{{ .Permalink | relURL }}">{{ .Lang }}: {{ .Title }}</a></span>
           {{ end }}
         </div>
       {{- end -}}
