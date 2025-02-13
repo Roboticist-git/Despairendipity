@@ -1,0 +1,14 @@
+public/
+resources/
+hugo_stats.json
+*.log
+.hugo_build.lock
+
+.obsidian/
+
+*.swp
+*.swo
+*.swn
+.DS_Store
+
+vk.com/

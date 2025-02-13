@@ -1,0 +1,94 @@
+<menu id='menu'>
+  {{ $path := "" }}
+  {{ with .File }}{{ $path = .Path }}{{ end }}
+  <div class='left'>
+    <a>
+      <img src='/icons/bars-solid.svg'
+           onclick='toggleSidebar()'
+           title='open table of contents'>
+    </a>
+    <a>
+      <img src='/icons/adjust-solid.svg'
+           style='position: relative; top: -1px'
+           onclick='switchTheme(localStorage.getItem("theme") == "dark" ? "light" : "dark")'
+           title='dark theme'>
+    </a>
+    <a>
+      <img src='/icons/search-solid.svg'
+           onclick='toggleSearch()'
+           title='search'>
+    </a>
+    <a class="language-switch">
+      <img src='/icons/language-solid.svg'
+           onclick='toggleLanguageMenu(event)'
+           title='change language'>
+    </a>
+    <ul id="language-menu" class="dropdown-menu">
+      {{ range .Site.Languages }}
+        <li><a href="{{ $.Site.BaseURL }}{{ .Lang }}/">{{ .Lang }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  <div class='title'>{{.Title}}</div>
+  <div class='right'>
+    <a onClick='window.print()'>
+      <img src='/icons/print-solid.svg' title='print'>
+    </a>
+
+    <a href='{{.Site.Params.Repo}}/blob/master/{{.Site.Params.ContentDir}}/{{$path}}' class='github-main'>
+      <img src='/icons/github-brands.svg' title='view on github'>
+    </a>
+  </div>
+</menu>
+
+<script>
+  function toggleLanguageMenu(event) {
+    event.stopPropagation(); // Предотвращает закрытие при клике на саму кнопку
+    var menu = document.getElementById("language-menu");
+    menu.classList.toggle("visible");
+  }
+
+  document.addEventListener("click", function(event) {
+    var menu = document.getElementById("language-menu");
+    if (!event.target.closest(".language-switch")) {
+      menu.classList.remove("visible");
+    }
+  });
+</script>
+
+<style>
+  .language-switch {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 30px;
+    background: #222;
+    padding: 5px;
+    border-radius: 5px;
+    list-style: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .dropdown-menu.visible {
+    display: block;
+  }
+
+  .dropdown-menu li {
+    padding: 5px;
+  }
+
+  .dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-menu li a:hover {
+    background: #333;
+  }
+</style>

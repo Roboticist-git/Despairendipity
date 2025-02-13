@@ -1,0 +1,28 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Despairendipity'
+theme = "algorithmica"
+defaultContentLanguage = "en"
+[languages]
+  [languages.en]
+    weight = 1
+    languageName = "English"
+    contentDir = "content/en"
+  [languages.ru]
+    weight = 3
+    languageName = "Русский"
+    contentDir = "content/ru"
+  [languages.jp]
+    weight = 2
+    languageName = "日本語"
+    contentDir = "content/jp"
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+
+  [markup.goldmark.extensions]
+    table = true  # Включаем расширение для таблиц
+
+[params]
+  repo = "https://github.com/Roboticist-git/Despairendipity"

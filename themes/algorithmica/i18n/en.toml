@@ -1,0 +1,31 @@
+[authors]
+one = "author"
+other = "authors"
+
+[editors]
+one = "editor"
+other = "editors"
+
+[published]
+other = "published"
+
+[updated]
+other = "updated"
+
+[sections]
+other = "sections"
+
+[search]
+other = "Search this book…"
+
+[searchCountPrefix]
+other = "Found"
+
+[searchCountSuffix]
+other = "pages"
+
+[prerequisites]
+other = "prerequisites"
+
+[translations]
+other = "translations"
