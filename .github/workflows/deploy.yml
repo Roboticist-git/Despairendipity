@@ -25,7 +25,7 @@ jobs:
           extended: true  # Для SCSS/SASS
 
       - name: Build Hugo site
-        run: hugo --minify -d public
+        run: hugo --minify --baseURL "https://roboticist-git.github.io/Despairendipity/"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
