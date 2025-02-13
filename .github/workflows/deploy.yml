@@ -3,9 +3,9 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches:
-      - main  # Деплоим при каждом пуше в main
+      - main  
 
-  workflow_dispatch:  # Позволяет запускать вручную
+  workflow_dispatch:  
 
 permissions:
   contents: write
@@ -25,7 +25,7 @@ jobs:
           extended: true  # Для SCSS/SASS
 
       - name: Build Hugo site
-        run: hugo --minify --baseURL "https://roboticist-git.github.io/Despairendipity/"
+        run: hugo --minify -d public
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
