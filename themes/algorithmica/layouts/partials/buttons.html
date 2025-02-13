@@ -35,15 +35,15 @@
       <img src='{{ "/icons/print-solid.svg" | relURL }}' title='print'>
     </a>
 
-    <a href='{{.Site.Params.Repo}}/blob/master/{{.Site.Params.ContentDir}}/{{$path}}' class='github-main'>
-      <img src='{{ "/icons/github-brands.svg" | relURL }}' title='view on github'>
-    </a>
+    <a href='{{ .Site.Params.Repo }}' class='github-main'>
+      <img src='{{ "/icons/github-brands.svg" | relURL }}' title='View on GitHub'>
+    </a>    
   </div>
 </menu>
 
 <script>
   function toggleLanguageMenu(event) {
-    event.stopPropagation(); // Предотвращает закрытие при клике на саму кнопку
+    event.stopPropagation(); 
     var menu = document.getElementById("language-menu");
     menu.classList.toggle("visible");
   }
