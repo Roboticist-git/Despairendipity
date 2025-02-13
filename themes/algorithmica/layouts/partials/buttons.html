@@ -3,23 +3,23 @@
   {{ with .File }}{{ $path = .Path }}{{ end }}
   <div class='left'>
     <a>
-      <img src='/icons/bars-solid.svg'
+      <img src='{{ "/icons/bars-solid.svg" | relURL }}'
            onclick='toggleSidebar()'
            title='open table of contents'>
     </a>
     <a>
-      <img src='/icons/adjust-solid.svg'
+      <img src='{{ "/icons/adjust-solid.svg" | relURL }}'
            style='position: relative; top: -1px'
            onclick='switchTheme(localStorage.getItem("theme") == "dark" ? "light" : "dark")'
            title='dark theme'>
     </a>
     <a>
-      <img src='/icons/search-solid.svg'
+      <img src='{{ "/icons/search-solid.svg" | relURL }}'
            onclick='toggleSearch()'
            title='search'>
     </a>
     <a class="language-switch">
-      <img src='/icons/language-solid.svg'
+      <img src='{{ "/icons/language-solid.svg" | relURL }}'
            onclick='toggleLanguageMenu(event)'
            title='change language'>
     </a>
@@ -32,11 +32,11 @@
   <div class='title'>{{.Title}}</div>
   <div class='right'>
     <a onClick='window.print()'>
-      <img src='/icons/print-solid.svg' title='print'>
+      <img src='{{ "/icons/print-solid.svg" | relURL }}' title='print'>
     </a>
 
     <a href='{{.Site.Params.Repo}}/blob/master/{{.Site.Params.ContentDir}}/{{$path}}' class='github-main'>
-      <img src='/icons/github-brands.svg' title='view on github'>
+      <img src='{{ "/icons/github-brands.svg" | relURL }}' title='view on github'>
     </a>
   </div>
 </menu>

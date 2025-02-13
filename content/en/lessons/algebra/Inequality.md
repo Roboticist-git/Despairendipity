@@ -83,7 +83,7 @@ $$
 
 Drawing:
 
-![](/StaticParabola_ManimCE_v0.19.0.png)
+![](/data/StaticParabola_ManimCE_v0.19.0.png)
 
 Finally, the solution for this inequality consists of the intervals on the $Ox$ axis where the curve ({{< color "yellow" >}}colored{{< /color >}} branches of the parabola) is above the axis:
 
