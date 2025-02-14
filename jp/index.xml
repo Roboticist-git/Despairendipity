@@ -87,4 +87,24 @@ a &amp;lt; b \[10pt]
 c &amp;gt; 0
 \end{cases}
 \quad \implies \quad a \cdot c &amp;lt; b \cdot c \tag{4}
-$$&lt;/p></description></item></channel></rss>
+$$&lt;/p></description></item><item><title>パート1.基本概念. 剰余算術.</title><link>https://roboticist-git.github.io/Despairendipity/jp/lessons/number-theory/number_theory_1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://roboticist-git.github.io/Despairendipity/jp/lessons/number-theory/number_theory_1/</guid><description>&lt;span class='anchor' id="研究対象">&lt;/span>
+&lt;h2>&lt;a class="anchor-link" href="https://roboticist-git.github.io/Despairendipity/jp/lessons/number-theory/number_theory_1/#%e7%a0%94%e7%a9%b6%e5%af%be%e8%b1%a1">#&lt;/a>研究対象&lt;/h2>&lt;p>このセクションでは、奇妙なことに、数とその性質について学びます。スタートに必要なもののいくつかを見ていきます。&lt;/p>
+&lt;p>まず、どのような数があるかを見てみましょう。以下の画像には、入れ子になった楕円形として数の集合の種類が示されています。小さいものから大きいものへと進んでいきます：&lt;/p>
+&lt;p>$$
+\mathbb{P} \subset \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}
+$$&lt;/p>
+&lt;p>&lt;figure>
+ &lt;img src="https://roboticist-git.github.io/Despairendipity/data/number_theory.svg">
+ &lt;figcaption>&lt;/figcaption>
+&lt;/figure>
+&lt;/p>
+&lt;p>これらの文字は何を意味しますか？&lt;/p>
+&lt;p>$\mathbb{P}$ — 素数の集合。素数とは、それ自体と1でしか割り切れない数です。実際には、素数の集合は自然数の厳密な部分集合ではありません。真の数学者は私が作った画像や書いたことについて批判するかもしれませんが、私の選択を次のように説明します：素数集合の任意の要素（数）は、上位の任意の集合の要素でもあります。
+このセクションでは、素数のユニークな特性のために、素数を頻繁に扱います。&lt;/p>
+&lt;p>&lt;em>注&lt;/em>: 1は素数ではありません。なぜなら、それは自分自身でしか割り切れないからです。&lt;/p>
+&lt;p>素数の例: {$2, ~ 3, ~ 5, ~ 7, ~ 11, ~ 13, ~~ \dots$}&lt;/p>
+&lt;hr>
+&lt;p>$\mathbb{N}$ — 自然数の集合。これは幼少期から馴染みのある数であり、物の数や年齢を数えるために使います。自然数の集合には、他の数を構成する基本的なブロックとして&lt;strong>1&lt;/strong>が含まれます。実際、素数の集合の任意の数も1を使って構成できます：$2 = 1+1; ~ ~ ~ 5= ~ 1 + 1 + 1 + 1 + 1$ など&amp;hellip;&lt;/p>
+&lt;p>&lt;em>注&lt;/em>: 私のレッスンでは、自然数は1から始まると考えます。&lt;/p>
+&lt;hr>
+&lt;p>$\mathbb{Z}$ — 整数の集合。これは、自然数の集合、ゼロ、および負の自然数の統合として定義されます ($\mathbb{Z} = ~ -\mathbb{N} ~ \cup ~ {0} ~ \cup ~ \mathbb{N}$)&lt;/p></description></item></channel></rss>

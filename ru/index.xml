@@ -15,4 +15,17 @@ b &amp;lt; c
 $$&lt;/p>
 &lt;p>$$
 a &amp;lt; b \implies a \pm m &amp;lt; b \pm m \tag{2}
-$$&lt;/p></description></item></channel></rss>
+$$&lt;/p></description></item><item><title>Часть 1.Базовые понятия. Арифметика остатков.</title><link>https://roboticist-git.github.io/Despairendipity/ru/lessons/number-theory/number_theory_1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://roboticist-git.github.io/Despairendipity/ru/lessons/number-theory/number_theory_1/</guid><description>&lt;span class='anchor' id="объект-изучения">&lt;/span>
+&lt;h2>&lt;a class="anchor-link" href="https://roboticist-git.github.io/Despairendipity/ru/lessons/number-theory/number_theory_1/#%d0%be%d0%b1%d1%8a%d0%b5%d0%ba%d1%82-%d0%b8%d0%b7%d1%83%d1%87%d0%b5%d0%bd%d0%b8%d1%8f">#&lt;/a>Объект изучения&lt;/h2>&lt;p>Данный подраздел изучает, как ни странно, числа, их свойства. Мы разберём некоторые из них, необходимые для старта.&lt;/p>
+&lt;p>Начнём с того какие числа бывают. На изображении ниже представлены виды числовых множеств в виде вложенных эллипсов. Будет двигаться от меньшего к большему:&lt;/p>
+&lt;p>$$
+\mathbb{P} \subset \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}
+$$&lt;/p>
+&lt;p>&lt;figure>
+ &lt;img src="https://roboticist-git.github.io/Despairendipity/data/number_theory.svg">
+ &lt;figcaption>&lt;/figcaption>
+&lt;/figure>
+&lt;/p>
+&lt;p>Что означают данные буквы?&lt;/p>
+&lt;p>$\mathbb{P}$ — множество простых чисел. Простые числа это те которые делятся на себя и на единицу. Множество простых чисел на самом деле не является строгим подмножеством натуральных чисел. Настоящие математики могут ругать меня за ту картинку что я сделал и за то что я написал, но я объясню свой выбор таким образом: любой элемент (число) простого множества также является элементом любого вышестоящего множества.
+В данном разделе мы часто будем работать с простыми числами из-за их уникальных свойств.&lt;/p></description></item></channel></rss>
