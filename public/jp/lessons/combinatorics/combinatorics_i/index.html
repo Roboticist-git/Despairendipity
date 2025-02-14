@@ -1,44 +1,749 @@
-<!doctype html><html lang=jp><head><script async src="https://www.googletagmanager.com/gtag/js?id=G-WBN59M8Y5S"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-WBN59M8Y5S")</script><script type=text/javascript>(function(e,t,n,s,o,i,a){e[o]=e[o]||function(){(e[o].a=e[o].a||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym"),ym(53961409,"init",{clickmap:!0,trackLinks:!0,accurateTrackBounce:!0,webvisor:!0})</script><noscript><div><img src=https://mc.yandex.ru/watch/53961409 style=position:absolute;left:-9999px alt></div></noscript><meta charset=utf-8><link rel=stylesheet href=https://roboticist-git.github.io/Despairendipity/Despairendipity/style.min.2ffdf2c5cce2a52f296b518961369259f79ed0f5c566dbf381630464e347e879.css integrity="sha256-L/3yxczipS8pa1GJYTaSWfee0PXFZtvzgWMEZONH6Hk="><link rel=stylesheet href=https://roboticist-git.github.io/Despairendipity/syntax.css id=syntax-theme><link rel=stylesheet type=text/css href=https://tikzjax.com/v1/fonts.css><script src=https://tikzjax.com/v1/tikzjax.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js></script><script src=https://roboticist-git.github.io/Despairendipity/scripts/lunr.stemmer.support.min.js></script><script src=https://roboticist-git.github.io/Despairendipity/scripts/lunr.ru.min.js></script><script src=https://roboticist-git.github.io/Despairendipity/scripts/lunr.multi.min.js></script><link rel=stylesheet id=theme><script>function toggleSidebar(){console.log("Toggling sidebar visibility");var e=document.getElementById("sidebar"),t=document.getElementById("wrapper");(e.classList.contains("sidebar-toggled")||window.getComputedStyle(e).display=="block")&&(e.classList.toggle("sidebar-hidden"),t.classList.toggle("sidebar-hidden")),e.classList.add("sidebar-toggled"),t.classList.add("sidebar-toggled")}function switchTheme(e){console.log("Changing theme:",e),document.getElementById("theme").href=e=="dark"?"/Despairendipity/dark.min.5114c62348434e1065911b055f0f10ce23c81c38cec0a28ec43fe3fc065fb3db.css":"",document.getElementById("syntax-theme").href=e=="dark"?"/syntax-dark.css":"/syntax.css",localStorage.setItem("theme",e)}async function toggleSearch(){console.log("Toggling search");var e=document.getElementById("search");if(window.getComputedStyle(e).display=="none"?(e.style.display="block",window.scrollTo({top:0}),document.getElementById("search-bar").focus()):e.style.display="none",!index){console.log("Fetching index");const e=await fetch("/searchindex.json"),t=await e.json();index=lunr(function(){this.use(lunr.multiLanguage("en","ru")),this.field("title",{boost:5}),this.field("content",{boost:1}),t.forEach(function(e){this.add(e),articles.push(e)},this)}),console.log("Ready to search")}}var articles=[],index=void 0;function search(){var n,e=document.getElementById("search-bar").value,s=document.getElementById("search-results"),o=document.getElementById("search-count");if(e==""){s.innerHTML="",o.innerHTML="";return}n=index.search(e),o.innerHTML="Found <b>"+n.length+"</b> pages";let t="";for(const a in n){const i=articles[n[a].ref];t+='<li><a href="'+i.path+'">'+i.title+"</a> <p>";const s=i.content,o=80;if(s.includes(e)){const n=s.indexOf(e);n>o&&(t+="…"),t+=s.substring(n-o,n)+"<b>"+e+"</b>"+s.substring(n+e.length,n+e.length+o)}else t+=s.substring(0,o*2);t+="…</p></li>"}s.innerHTML=t}localStorage.getItem("theme")=="dark"&&switchTheme("dark"),window.addEventListener("load",function(){var e=document.getElementById("active-element");e&&e.scrollIntoView({block:"center"})}),window.addEventListener("scroll",function(){var e=document.getElementById("menu");window.scrollY<120?e.classList.remove("scrolled"):e.classList.add("scrolled")}),window.addEventListener("keydown",function(e){if(e.altKey)return;if(document.activeElement.tagName=="INPUT")return;e.key=="ArrowLeft"?document.getElementById("prev-article").click():e.key=="ArrowRight"&&document.getElementById("next-article").click()})</script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css integrity=sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js integrity=sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js integrity=sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}]})'></script><title>組み合わせ論 - Despairendipity</title></head><body><nav id=sidebar><div class=title><a href=https://roboticist-git.github.io/Despairendipity/>Despairendipity</a></div><ul></ul></nav><div id=wrapper><menu id=menu><div class=left><a><img src=https://roboticist-git.github.io/Despairendipity/icons/bars-solid.svg onclick=toggleSidebar() title='open table of contents'>
-</a><a><img src=https://roboticist-git.github.io/Despairendipity/icons/adjust-solid.svg style=position:relative;top:-1px onclick='switchTheme(localStorage.getItem("theme")=="dark"?"light":"dark")' title='dark theme'>
-</a><a><img src=https://roboticist-git.github.io/Despairendipity/icons/search-solid.svg onclick=toggleSearch() title=search>
-</a><a class=language-switch><img src=https://roboticist-git.github.io/Despairendipity/icons/language-solid.svg onclick=toggleLanguageMenu(event) title='change language'></a><ul id=language-menu class=dropdown-menu><li><a href=https://roboticist-git.github.io/Despairendipity/en/>en</a></li><li><a href=https://roboticist-git.github.io/Despairendipity/jp/>jp</a></li><li><a href=https://roboticist-git.github.io/Despairendipity/ru/>ru</a></li></ul></div><div class=title>組み合わせ論</div><div class=right><a onclick=window.print()><img src=https://roboticist-git.github.io/Despairendipity/icons/print-solid.svg title=print>
-</a><a href=https://github.com/Roboticist-git/Despairendipity class=github-main><img src=https://roboticist-git.github.io/Despairendipity/icons/github-brands.svg title='View on GitHub'></a></div></menu><script>function toggleLanguageMenu(e){e.stopPropagation();var t=document.getElementById("language-menu");t.classList.toggle("visible")}document.addEventListener("click",function(e){var t=document.getElementById("language-menu");e.target.closest(".language-switch")||t.classList.remove("visible")})</script><style>.language-switch{position:relative;cursor:pointer}.dropdown-menu{display:none;position:absolute;left:0;top:30px;background:#222;padding:5px;border-radius:5px;list-style:none;box-shadow:0 2px 5px rgba(0,0,0,.2)}.dropdown-menu.visible{display:block}.dropdown-menu li{padding:5px}.dropdown-menu li a{color:#fff;text-decoration:none;display:block}.dropdown-menu li a:hover{background:#333}</style><main><div id=search><input id=search-bar type=search placeholder='Search this book…' oninput=search()><div id=search-count></div><div id=search-results></div></div><header><h1>組み合わせ論</h1><div class=info><div><span>updated</span>
-<span>Feb 10, 2025</span></div><div><span>translations</span>
-<span><a href=https://roboticist-git.github.io/Despairendipity/lessons/combinatorics/combinatorics_i/>en: Combinatorics</a></span>
-<span><a href=https://roboticist-git.github.io/Despairendipity/ru/lessons/combinatorics/combinatorics_i/>ru: Комбинаторика</a></span></div></div></header><article><span class=anchor id=パート-i></span><h1><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e3%83%91%e3%83%bc%e3%83%88-i>#</a>パート I.</h1><p>組み合わせ論とは何でしょうか？ これは、さまざまな要素の構成を選択し、順序付けし、数え上げる方法を研究する数学の一分野です。 「要素」とは何を指すのでしょうか？ それは物理的なオブジェクトであっても、数、集合、あるいはグラフなどの抽象的な数学的実体であってもかまいません。</p><p>ここでは組み合わせ論の主要な原理、つまり加法原理、乗法原理、そして <strong>順列</strong>、<strong>組み合わせ</strong>、<strong>配置</strong> の概念を取り上げます。</p><span class=anchor id=プリンシプル加法原理></span><h4><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b7%e3%83%97%e3%83%ab%e5%8a%a0%e6%b3%95%e5%8e%9f%e7%90%86>#</a>プリンシプル（加法原理）:</h4><p>私たちには 100 枚のコイン（通貨の名称は何でもよい）があります。これで食べ物を買おうとします。
-お店に来ると、次のような「選択肢」がありました： おにぎり（99 コイン）、ハンバーガー（100 コイン）、炭酸飲料（70 コイン）、コーヒー（100 コイン）、アイスクリーム（65 コイン）。</p><p>利用できるものを買う方法は何通りあるでしょうか？</p><p>5 つの候補から <strong>何か 1 つ</strong> を選ぶことができるので、$\implies$ 合計で 5 通りです。</p><p>🔹形式的には：組み合わせ論における加法原理は、相互に <strong>独立</strong> しているすべての可能な方法を足し合わせることで、全体の可能な方法の総数を得ることを意味します。</p><span class=anchor id=プリンシプル乗法原理></span><h4><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b7%e3%83%97%e3%83%ab%e4%b9%97%e6%b3%95%e5%8e%9f%e7%90%86>#</a>プリンシプル（乗法原理）:</h4><p>朝、授業に行く準備をするとき、今日はどんな服装で行くか選ぶ必要があります。</p><p>上（トップス）： 黒いシャツ ($A$)、黒いフーディー ($B$)、グレーの T シャツ ($C$)<br>下（ボトムス）： 黒いジーンズ ($D$)、ダークブルーのズボン ($E$)</p><p>服装のバリエーションを表にまとめます：</p><table><thead><tr><th>上</th><th>下</th><th></th></tr></thead><tbody><tr><td>$A$</td><td>$D$</td><td>黒いシャツと黒いジーンズ</td></tr><tr><td>$A$</td><td>$E$</td><td>黒いシャツとダークブルーのズボン</td></tr><tr><td>$B$</td><td>$D$</td><td>黒いフーディーと黒いジーンズ</td></tr><tr><td>$B$</td><td>$E$</td><td>黒いフーディーとダークブルーのズボン</td></tr><tr><td>$C$</td><td>$D$</td><td>グレーの T シャツと黒いジーンズ</td></tr><tr><td>$C$</td><td>$E$</td><td>グレーの T シャツとダークブルーのズボン</td></tr></tbody></table><p>表から分かるように、合計 6 通りの組み合わせがあります。 ここでのポイントは、ズボンを穿かなかったり上を着なかったりという選択肢は（おそらく）ないということです。 とはいえ、日々の生活に少しでも変化を加えようと思えば、服を自由に組み合わせることができます。 さらに、ズボンとトップスを着るとき、それをどちらを先に着るかは <strong>問題にならない</strong> ということも重要です。 この点がなぜ重要かというと、今後、いくつかの状況では要素の <strong>順序</strong> が決定的な役割を果たすからです。</p><p>🔹形式的には：もし最初の選択肢が $m$ 通り、次の選択肢が $n$ 通りあるなら、全体の選択肢の数は $n \cdot m$ になります。</p><hr><span class=anchor id=順列配置そして組み合わせ></span><h2><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e9%a0%86%e5%88%97%e9%85%8d%e7%bd%ae%e3%81%9d%e3%81%97%e3%81%a6%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b>#</a>順列、配置、そして組み合わせ</h2><p>ここからは、<strong>要素を選び、並べる</strong> 主要な方法について学んでいきましょう。</p><span class=anchor id=順列></span><h3><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e9%a0%86%e5%88%97>#</a>順列</h3><p>$n$ 個の異なる要素があるとき、それらを並べる方法は何通りあるでしょうか？</p><p>たとえば <strong>3 冊の本</strong> ($A$, $B$, $C$) があって、それらを本棚にいろいろな順番で並べる場合を考えます。</p><p>1 冊目は <strong>3 通り</strong>、2 冊目は <strong>2 通り</strong>、そして 3 冊目は自動的に決まります。</p><p>3 冊の本を並べる総数は、$P(3) = 3! = 3 \cdot 2 \cdot 1 = 6$ となります。</p><p><strong>一般的な場合：</strong></p><p>もし $n$ 個の要素があるとき、すべての要素を並べる <strong>順列</strong> の数は</p>$$
+<!doctype html>
+<html lang='jp'><head><script src="/Despairendipity/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Despairendipity/livereload" data-no-instant defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WBN59M8Y5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WBN59M8Y5S');
+</script>
+
+
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(53961409, "init", {
+       clickmap:true,
+       trackLinks:true,
+       accurateTrackBounce:true,
+       webvisor:true
+  });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/53961409" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<meta charset="utf-8">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/Despairendipity/style.min.2ffdf2c5cce2a52f296b518961369259f79ed0f5c566dbf381630464e347e879.css" integrity="sha256-L/3yxczipS8pa1GJYTaSWfee0PXFZtvzgWMEZONH6Hk=">
+  <link rel="stylesheet" href="http://localhost:1313/Despairendipity/syntax.css" id="syntax-theme">
+
+  <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+  <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+  <script src="http://localhost:1313/Despairendipity/scripts/lunr.stemmer.support.min.js"></script>
+  <script src="http://localhost:1313/Despairendipity/scripts/lunr.ru.min.js"></script>
+  <script src="http://localhost:1313/Despairendipity/scripts/lunr.multi.min.js"></script>
+
+  
+  <link rel="stylesheet" id="theme">
+
+  <script>
+    function toggleSidebar() {
+      var sidebar = document.getElementById('sidebar')
+      var wrapper = document.getElementById('wrapper')
+      if (sidebar.classList.contains('sidebar-toggled') || window.getComputedStyle(sidebar).display == 'block') { 
+        sidebar.classList.toggle('sidebar-hidden')
+        wrapper.classList.toggle('sidebar-hidden')
+      }
+      sidebar.classList.add('sidebar-toggled')
+      wrapper.classList.add('sidebar-toggled')
+    }
+
+    function switchTheme(theme) {
+      document.getElementById('theme').href = (theme == 'dark' ? "http:\/\/localhost:1313\/Despairendipity\/dark.min.5114c62348434e1065911b055f0f10ce23c81c38cec0a28ec43fe3fc065fb3db.css" : "")
+      document.getElementById('syntax-theme').href = (theme == 'dark' ? '\/syntax-dark.css' : '\/syntax.css')
+      localStorage.setItem('theme', theme)
+    }
+
+    async function toggleSearch() {
+      var searchDiv = document.getElementById('search')
+      if (window.getComputedStyle(searchDiv).display == 'none') {
+        searchDiv.style.display = 'block'
+        window.scrollTo({ top: 0 });
+        document.getElementById('search-bar').focus()
+      } else {
+        searchDiv.style.display = 'none'  
+      }
+
+      if (!index) {
+        const response = await fetch('\/searchindex.json')
+        const pages = await response.json()
+        index = lunr(function() {
+          this.use(lunr.multiLanguage('en', 'ru'))
+          this.field('title', { boost: 5 })
+          this.field('content', { boost: 1 })
+          pages.forEach(function(doc) {
+            this.add(doc)
+            articles.push(doc)
+          }, this)
+        })
+      }
+    }
+
+    var articles = []
+    var index = undefined
+
+    function search() {
+      var query = document.getElementById('search-bar').value
+      var resultsDiv = document.getElementById('search-results')
+      var countDiv = document.getElementById('search-count')
+      
+      if (query == '') {
+        resultsDiv.innerHTML = ''
+        countDiv.innerHTML = ''
+        return
+      }
+      
+      var results = index.search(query)
+
+      countDiv.innerHTML = 'Found <b>' + results.length + '</b> pages'
+
+      let resultList = ''
+
+      for (const n in results) {
+        const item = articles[results[n].ref]
+        resultList += '<li><a href="' + item.path + '">' + item.title + '</a> <p>'
+        const text = item.content
+
+        const contextLimit = 80
+
+        if (text.includes(query)) {
+          const start = text.indexOf(query)
+          if (start > contextLimit)
+            resultList += '…'
+          resultList += text.substring(start - contextLimit, start)
+                      + '<b>' + query + '</b>' + text.substring(start + query.length, start + query.length + contextLimit)
+
+        } else {
+          resultList += text.substring(0, contextLimit * 2)
+        }
+        resultList += '…</p></li>'
+      }
+
+      resultsDiv.innerHTML = resultList
+    }
+
+    if (localStorage.getItem('theme') == 'dark') {
+      switchTheme('dark')
+    }
+
+    window.addEventListener('load', function() {
+      var el = document.getElementById("active-element")
+      if (el) {
+        el.scrollIntoView({block: "center"})
+      }
+    })
+
+    window.addEventListener('scroll', function() {
+      var menu = document.getElementById('menu')
+      if (window.scrollY < 120) {
+        menu.classList.remove('scrolled')
+      } else {
+        menu.classList.add('scrolled')
+      }
+    })
+
+    window.addEventListener('keydown', function(e) {
+      if (e.altKey) { return }
+      if (document.activeElement.tagName == 'INPUT') { return }
+      if (e.key == 'ArrowLeft') {
+        document.getElementById('prev-article').click()
+      } else if (e.key == 'ArrowRight') {
+        document.getElementById('next-article').click()
+      }
+    })
+  </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  })"></script>
+
+  
+  <title>組み合わせ論 - Despairendipity</title>
+</head>
+<body><nav id='sidebar' >
+  
+  
+  <div class='title'>
+    <a href='http://localhost:1313/Despairendipity/'>Despairendipity</a>
+    
+  </div>
+  <ul>
+    
+      
+    
+  </ul>
+</nav>
+<div id='wrapper' ><menu id='menu'>
+  
+  
+  <div class='left'>
+    <a>
+      <img src='http://localhost:1313/Despairendipity/icons/bars-solid.svg'
+           onclick='toggleSidebar()'
+           title='open table of contents'>
+    </a>
+    <a>
+      <img src='http://localhost:1313/Despairendipity/icons/adjust-solid.svg'
+           style='position: relative; top: -1px'
+           onclick='switchTheme(localStorage.getItem("theme") == "dark" ? "light" : "dark")'
+           title='dark theme'>
+    </a>
+    <a>
+      <img src='http://localhost:1313/Despairendipity/icons/search-solid.svg'
+           onclick='toggleSearch()'
+           title='search'>
+    </a>
+    <a class="language-switch">
+      <img src='http://localhost:1313/Despairendipity/icons/language-solid.svg'
+           onclick='toggleLanguageMenu(event)'
+           title='change language'>
+    </a>
+    <ul id="language-menu" class="dropdown-menu">
+      
+        <li><a href="http://localhost:1313/Despairendipity/en/">en</a></li>
+      
+        <li><a href="http://localhost:1313/Despairendipity/jp/">jp</a></li>
+      
+        <li><a href="http://localhost:1313/Despairendipity/ru/">ru</a></li>
+      
+    </ul>
+  </div>
+  <div class='title'>組み合わせ論</div>
+  <div class='right'>
+    <a onClick='window.print()'>
+      <img src='http://localhost:1313/Despairendipity/icons/print-solid.svg' title='print'>
+    </a>
+
+    <a href='https://github.com/Roboticist-git/Despairendipity' class='github-main'>
+      <img src='http://localhost:1313/Despairendipity/icons/github-brands.svg' title='View on GitHub'>
+    </a>    
+  </div>
+</menu>
+
+<script>
+  function toggleLanguageMenu(event) {
+    event.stopPropagation(); 
+    var menu = document.getElementById("language-menu");
+    menu.classList.toggle("visible");
+  }
+
+  document.addEventListener("click", function(event) {
+    var menu = document.getElementById("language-menu");
+    if (!event.target.closest(".language-switch")) {
+      menu.classList.remove("visible");
+    }
+  });
+</script>
+
+<style>
+  .language-switch {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 30px;
+    background: #222;
+    padding: 5px;
+    border-radius: 5px;
+    list-style: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .dropdown-menu.visible {
+    display: block;
+  }
+
+  .dropdown-menu li {
+    padding: 5px;
+  }
+
+  .dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-menu li a:hover {
+    background: #333;
+  }
+</style>
+<main>
+        <div id="search">
+    <input id="search-bar" type="search" placeholder='Search this book…' oninput="search()">
+    <div id="search-count"></div>
+    <div id="search-results">
+    </div>
+</div>
+<header>
+  
+  <h1>組み合わせ論</h1>
+  
+    <div class='info'><div>
+          <span>updated</span>
+          <span>Feb 10, 2025</span>
+        </div>
+      <div>
+          <span>translations</span>
+          
+            <span><a href="http://localhost:1313/Despairendipity/lessons/combinatorics/combinatorics_i/">en: Combinatorics</a></span>
+          
+            <span><a href="http://localhost:1313/Despairendipity/ru/lessons/combinatorics/combinatorics_i/">ru: Комбинаторика</a></span>
+          
+        </div></div>
+  
+</header>
+<article>
+  
+
+
+  
+    
+    
+      
+        <span class='anchor' id="パート-i"></span>
+<h1><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e3%83%91%e3%83%bc%e3%83%88-i">#</a>パート I.</h1><p>組み合わせ論とは何でしょうか？ これは、さまざまな要素の構成を選択し、順序付けし、数え上げる方法を研究する数学の一分野です。 「要素」とは何を指すのでしょうか？ それは物理的なオブジェクトであっても、数、集合、あるいはグラフなどの抽象的な数学的実体であってもかまいません。</p>
+<p>ここでは組み合わせ論の主要な原理、つまり加法原理、乗法原理、そして <strong>順列</strong>、<strong>組み合わせ</strong>、<strong>配置</strong> の概念を取り上げます。</p>
+<span class='anchor' id="プリンシプル加法原理"></span>
+<h4><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b7%e3%83%97%e3%83%ab%e5%8a%a0%e6%b3%95%e5%8e%9f%e7%90%86">#</a>プリンシプル（加法原理）:</h4><p>私たちには 100 枚のコイン（通貨の名称は何でもよい）があります。これで食べ物を買おうとします。
+お店に来ると、次のような「選択肢」がありました： おにぎり（99 コイン）、ハンバーガー（100 コイン）、炭酸飲料（70 コイン）、コーヒー（100 コイン）、アイスクリーム（65 コイン）。</p>
+<p>利用できるものを買う方法は何通りあるでしょうか？</p>
+<p>5 つの候補から <strong>何か 1 つ</strong> を選ぶことができるので、$\implies$ 合計で 5 通りです。</p>
+<p>🔹形式的には：組み合わせ論における加法原理は、相互に <strong>独立</strong> しているすべての可能な方法を足し合わせることで、全体の可能な方法の総数を得ることを意味します。</p>
+<span class='anchor' id="プリンシプル乗法原理"></span>
+<h4><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b7%e3%83%97%e3%83%ab%e4%b9%97%e6%b3%95%e5%8e%9f%e7%90%86">#</a>プリンシプル（乗法原理）:</h4><p>朝、授業に行く準備をするとき、今日はどんな服装で行くか選ぶ必要があります。</p>
+<p>上（トップス）： 黒いシャツ ($A$)、黒いフーディー ($B$)、グレーの T シャツ ($C$)<br>
+下（ボトムス）： 黒いジーンズ ($D$)、ダークブルーのズボン ($E$)</p>
+<p>服装のバリエーションを表にまとめます：</p>
+<table>
+  <thead>
+      <tr>
+          <th>上</th>
+          <th>下</th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$A$</td>
+          <td>$D$</td>
+          <td>黒いシャツと黒いジーンズ</td>
+      </tr>
+      <tr>
+          <td>$A$</td>
+          <td>$E$</td>
+          <td>黒いシャツとダークブルーのズボン</td>
+      </tr>
+      <tr>
+          <td>$B$</td>
+          <td>$D$</td>
+          <td>黒いフーディーと黒いジーンズ</td>
+      </tr>
+      <tr>
+          <td>$B$</td>
+          <td>$E$</td>
+          <td>黒いフーディーとダークブルーのズボン</td>
+      </tr>
+      <tr>
+          <td>$C$</td>
+          <td>$D$</td>
+          <td>グレーの T シャツと黒いジーンズ</td>
+      </tr>
+      <tr>
+          <td>$C$</td>
+          <td>$E$</td>
+          <td>グレーの T シャツとダークブルーのズボン</td>
+      </tr>
+  </tbody>
+</table>
+<p>表から分かるように、合計 6 通りの組み合わせがあります。 ここでのポイントは、ズボンを穿かなかったり上を着なかったりという選択肢は（おそらく）ないということです。 とはいえ、日々の生活に少しでも変化を加えようと思えば、服を自由に組み合わせることができます。 さらに、ズボンとトップスを着るとき、それをどちらを先に着るかは <strong>問題にならない</strong> ということも重要です。 この点がなぜ重要かというと、今後、いくつかの状況では要素の <strong>順序</strong> が決定的な役割を果たすからです。</p>
+<p>🔹形式的には：もし最初の選択肢が $m$ 通り、次の選択肢が $n$ 通りあるなら、全体の選択肢の数は $n \cdot m$ になります。</p>
+<hr>
+<span class='anchor' id="順列配置そして組み合わせ"></span>
+<h2><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e9%a0%86%e5%88%97%e9%85%8d%e7%bd%ae%e3%81%9d%e3%81%97%e3%81%a6%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b">#</a>順列、配置、そして組み合わせ</h2><p>ここからは、<strong>要素を選び、並べる</strong> 主要な方法について学んでいきましょう。</p>
+<span class='anchor' id="順列"></span>
+<h3><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e9%a0%86%e5%88%97">#</a>順列</h3><p>$n$ 個の異なる要素があるとき、それらを並べる方法は何通りあるでしょうか？</p>
+<p>たとえば <strong>3 冊の本</strong> ($A$, $B$, $C$) があって、それらを本棚にいろいろな順番で並べる場合を考えます。</p>
+<p>1 冊目は <strong>3 通り</strong>、2 冊目は <strong>2 通り</strong>、そして 3 冊目は自動的に決まります。</p>
+<p>3 冊の本を並べる総数は、$P(3) = 3! = 3 \cdot 2 \cdot 1 = 6$ となります。</p>
+<p><strong>一般的な場合：</strong></p>
+<p>もし $n$ 個の要素があるとき、すべての要素を並べる <strong>順列</strong> の数は</p>
+
+      
+    
+  
+
+  
+    $$
+    
 P(n) = n!
-$$<p>です。 <em>注釈</em>: ここで &ldquo;$n!$&rdquo; という記号は「$n$ の階乗」を意味し、$n$ が 1 から $n$ までのすべての数を掛け合わせたもの ($1\cdot 2 \cdot 3 \cdot 4 \cdot \dots \cdot n$) です。</p><p>🔹 <strong>例</strong>: 5 冊の異なる本を本棚に並べる方法は何通りあるか？</p>$$
+
+    $$
+  
+
+  
+    
+    
+      
+        <p>です。  <em>注釈</em>: ここで &ldquo;$n!$&rdquo; という記号は「$n$ の階乗」を意味し、$n$ が 1 から $n$ までのすべての数を掛け合わせたもの ($1\cdot 2 \cdot 3 \cdot 4 \cdot \dots \cdot n$) です。</p>
+<p>🔹 <strong>例</strong>: 5 冊の異なる本を本棚に並べる方法は何通りあるか？</p>
+
+      
+    
+  
+
+  
+    $$
+    
 P(5) = 5! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120
-$$<hr><span class=anchor id=組み合わせ></span><h3><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b>#</a>組み合わせ</h3><p>次に、<strong>順序が重要でない</strong> 場合を考えます。</p><p>たとえば <strong>10 人の学生</strong> がいて、その中から <strong>3 人</strong> を選び、オリンピック（または追試）に送り出すとします。</p><p><strong>A, B, C</strong> を選ぶのと <strong>C, A, B</strong> を選ぶのは <strong>同じ選び方</strong> です。順序は関係ありません。</p><p><strong>組み合わせ</strong> $C(n, k)$ の公式：</p>$$
+
+    $$
+  
+
+  
+    
+    
+      
+        <hr>
+<span class='anchor' id="組み合わせ"></span>
+<h3><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b">#</a>組み合わせ</h3><p>次に、<strong>順序が重要でない</strong> 場合を考えます。</p>
+<p>たとえば <strong>10 人の学生</strong> がいて、その中から <strong>3 人</strong> を選び、オリンピック（または追試）に送り出すとします。</p>
+<p><strong>A, B, C</strong> を選ぶのと <strong>C, A, B</strong> を選ぶのは <strong>同じ選び方</strong> です。順序は関係ありません。</p>
+<p><strong>組み合わせ</strong> $C(n, k)$ の公式：</p>
+
+      
+    
+  
+
+  
+    $$
+    
 C(n, k) = \frac{n!}{k!(n-k)!}
-$$
-🔹 <strong>例</strong>: 10 人の学生のうちから 3 人を選ぶ方法は何通りか？
-$$
+
+    $$
+  
+
+  
+    
+    
+      
+        🔹 <strong>例</strong>: 10 人の学生のうちから 3 人を選ぶ方法は何通りか？
+      
+    
+  
+
+  
+    $$
+    
 C(10,3) = \frac{10!}{3!(10-3)!} = \frac{10!}{3!7!} = \frac{10 \cdot 9 \cdot 8}{3 \cdot 2 \cdot 1} = 120
-$$<p>🔹 <strong>ここで何が起きているか？</strong></p><p>まず <strong>配置</strong> ($A(n, k)$) を考えると、そこではすべての順列が数え上げられています。<br>順序を考慮しないようにするためには、$k$ 個の要素の <strong>順列の数</strong>（$k!$）で割って、重複を取り除く必要があります。</p><hr><span class=anchor id=繰り返しを許す組み合わせ></span><h3><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e7%b9%b0%e3%82%8a%e8%bf%94%e3%81%97%e3%82%92%e8%a8%b1%e3%81%99%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b>#</a>繰り返しを許す組み合わせ</h3><p>もし要素を <strong>繰り返して選ぶ</strong> ことができる場合、<strong>繰り返し組み合わせ</strong> の公式が使われます：</p>$$
+
+    $$
+  
+
+  
+    
+    
+      
+        <p>🔹 <strong>ここで何が起きているか？</strong></p>
+<p>まず <strong>配置</strong> ($A(n, k)$) を考えると、そこではすべての順列が数え上げられています。<br>
+順序を考慮しないようにするためには、$k$ 個の要素の <strong>順列の数</strong>（$k!$）で割って、重複を取り除く必要があります。</p>
+<hr>
+<span class='anchor' id="繰り返しを許す組み合わせ"></span>
+<h3><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e7%b9%b0%e3%82%8a%e8%bf%94%e3%81%97%e3%82%92%e8%a8%b1%e3%81%99%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b">#</a>繰り返しを許す組み合わせ</h3><p>もし要素を <strong>繰り返して選ぶ</strong> ことができる場合、<strong>繰り返し組み合わせ</strong> の公式が使われます：</p>
+
+      
+    
+  
+
+  
+    $$
+    
 \widetilde{C}(n, k) = C(n+k-1, k) = \frac{(n+k-1)!}{k!(n-1)!}
-$$
-🔹 <strong>例</strong>: 5 種類の花があって、3 束の花を選ぶ（同じ種類でもよい）場合、
-$$
+
+    $$
+  
+
+  
+    
+    
+      
+        🔹 <strong>例</strong>: 5 種類の花があって、3 束の花を選ぶ（同じ種類でもよい）場合、
+      
+    
+  
+
+  
+    $$
+    
 \widetilde{C}(5,3) = \frac{(5+3-1)!}{3!(5-1)!} = \frac{7!}{3!4!} = 35
-$$<hr><span class=anchor id=配置順序を考慮した組み合わせ></span><h3><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e9%85%8d%e7%bd%ae%e9%a0%86%e5%ba%8f%e3%82%92%e8%80%83%e6%85%ae%e3%81%97%e3%81%9f%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b>#</a>配置（＝順序を考慮した組み合わせ）</h3><p>今度は <strong>選ぶ数よりもオブジェクトが多い場合</strong> を考えます。</p><p>たとえば、<strong>8 人の参加者</strong> のうち <strong>3 つの賞</strong>（1 位、2 位、3 位）を決めるとき、<br>順序が重要で、<strong>A, B, C</strong> と <strong>B, C, A</strong> は同じではありません。</p><p><strong>配置</strong> $A(n, k)$ の公式：</p>$$
+
+    $$
+  
+
+  
+    
+    
+      
+        <hr>
+<span class='anchor' id="配置順序を考慮した組み合わせ"></span>
+<h3><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e9%85%8d%e7%bd%ae%e9%a0%86%e5%ba%8f%e3%82%92%e8%80%83%e6%85%ae%e3%81%97%e3%81%9f%e7%b5%84%e3%81%bf%e5%90%88%e3%82%8f%e3%81%9b">#</a>配置（＝順序を考慮した組み合わせ）</h3><p>今度は <strong>選ぶ数よりもオブジェクトが多い場合</strong> を考えます。</p>
+<p>たとえば、<strong>8 人の参加者</strong> のうち <strong>3 つの賞</strong>（1 位、2 位、3 位）を決めるとき、<br>
+順序が重要で、<strong>A, B, C</strong> と <strong>B, C, A</strong> は同じではありません。</p>
+<p><strong>配置</strong> $A(n, k)$ の公式：</p>
+
+      
+    
+  
+
+  
+    $$
+    
 A(n, k) = \frac{n!}{(n-k)!}
-$$
-🔹 <strong>例</strong>: 8 人から優勝、準優勝、3 位を決める方法は何通りか？
-$$
+
+    $$
+  
+
+  
+    
+    
+      
+        🔹 <strong>例</strong>: 8 人から優勝、準優勝、3 位を決める方法は何通りか？
+      
+    
+  
+
+  
+    $$
+    
 A(8,3) = \frac{8!}{(8-3)!} = \frac{8!}{5!} = 8 \cdot 7 \cdot 6 = 336
-$$<p>🔹 <strong>ここで何が起きているか？</strong></p><p>1 位には <strong>8 人</strong> の中から選ぶ、<br>2 位には残り <strong>7 人</strong> の中から選ぶ、<br>3 位には残り <strong>6 人</strong> の中から選ぶ。</p><p>よって、3 つの数を掛け合わせることになり、これが <strong>配置</strong> の公式になります。</p><p><strong>注</strong>: 配置は <strong>順序を考慮する組み合わせ</strong> と同じです。<br>まず <strong>k 個</strong> を（組み合わせのように）選び、その後（順列のように）並べ替えます：</p>$$
+
+    $$
+  
+
+  
+    
+    
+      
+        <p>🔹 <strong>ここで何が起きているか？</strong></p>
+<p>1 位には <strong>8 人</strong> の中から選ぶ、<br>
+2 位には残り <strong>7 人</strong> の中から選ぶ、<br>
+3 位には残り <strong>6 人</strong> の中から選ぶ。</p>
+<p>よって、3 つの数を掛け合わせることになり、これが <strong>配置</strong> の公式になります。</p>
+<p><strong>注</strong>: 配置は <strong>順序を考慮する組み合わせ</strong> と同じです。<br>
+まず <strong>k 個</strong> を（組み合わせのように）選び、その後（順列のように）並べ替えます：</p>
+
+      
+    
+  
+
+  
+    $$
+    
 A(n, k) = C(n, k) \cdot k!
-$$<hr><span class=anchor id=繰り返しを許す配置></span><h3><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e7%b9%b0%e3%82%8a%e8%bf%94%e3%81%97%e3%82%92%e8%a8%b1%e3%81%99%e9%85%8d%e7%bd%ae>#</a>繰り返しを許す配置</h3><p>もし <strong>同じ要素を複数回選ぶ</strong> ことができる場合には、別の公式が使われます：</p>$$
+
+    $$
+  
+
+  
+    
+    
+      
+        <hr>
+<span class='anchor' id="繰り返しを許す配置"></span>
+<h3><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e7%b9%b0%e3%82%8a%e8%bf%94%e3%81%97%e3%82%92%e8%a8%b1%e3%81%99%e9%85%8d%e7%bd%ae">#</a>繰り返しを許す配置</h3><p>もし <strong>同じ要素を複数回選ぶ</strong> ことができる場合には、別の公式が使われます：</p>
+      
+    
+  
+
+  
+    $$
+    
 \widetilde{A}(n, k) = n^k
-$$
-🔹 <strong>例</strong>: 10 種類のアイスクリームがあり、4 個選ぶ（同じ味でもよい）とします。
-$$
+
+    $$
+  
+
+  
+    
+    
+      
+        🔹 <strong>例</strong>: 10 種類のアイスクリームがあり、4 個選ぶ（同じ味でもよい）とします。
+      
+    
+  
+
+  
+    $$
+    
 \widetilde{A}(10,4) = 10^4 = 10000
-$$<hr><span class=anchor id=結論></span><h2><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e7%b5%90%e8%ab%96>#</a><strong>結論</strong></h2><table><thead><tr><th>名前</th><th>公式</th><th>順序を考慮するか</th><th>例</th></tr></thead><tbody><tr><td><strong>順列</strong></td><td>$P(n) = n!$</td><td>✅ はい</td><td>5 冊の本を本棚に並べる方法</td></tr><tr><td><strong>配置</strong></td><td>$A(n, k) = \frac{n!}{(n-k)!}$</td><td>✅ はい</td><td>8 人の中から 3 人の勝者を決める</td></tr><tr><td><strong>繰り返しを許す配置</strong></td><td>$\widetilde{A}(n, k) = n^k$</td><td>✅ はい</td><td>アイスクリームを 4 個選ぶ（重複可）</td></tr><tr><td><strong>組み合わせ</strong></td><td>$C(n, k) = \frac{n!}{k!(n-k)!}$</td><td>❌ いいえ</td><td>10 人の中から 3 人を選ぶ</td></tr><tr><td><strong>繰り返しを許す組み合わせ</strong></td><td>$\widetilde{C}(n, k) = \frac{(n+k-1)!}{k!(n-1)!}$</td><td>❌ いいえ</td><td>3 束の花を選ぶ（重複可）</td></tr></tbody></table><hr><span class=anchor id=いくつかの例></span><h2><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e3%81%84%e3%81%8f%e3%81%a4%e3%81%8b%e3%81%ae%e4%be%8b>#</a>いくつかの例</h2><span class=anchor id=1-5-個の-異なる-チェスの駒をボードに配置する方法は何通りか></span><h4><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#1-5-%e5%80%8b%e3%81%ae-%e7%95%b0%e3%81%aa%e3%82%8b-%e3%83%81%e3%82%a7%e3%82%b9%e3%81%ae%e9%a7%92%e3%82%92%e3%83%9c%e3%83%bc%e3%83%89%e3%81%ab%e9%85%8d%e7%bd%ae%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95%e3%81%af%e4%bd%95%e9%80%9a%e3%82%8a%e3%81%8b>#</a>1. 5 個の <strong>異なる</strong> チェスの駒をボードに配置する方法は何通りか？</h4><p>まず考えるべきこと：本棚に本を並べるときのような単純な順列の公式はここでは使えません。</p><p>1 個目の駒は 64 通り、2 個目は 63 通り、3 個目は 62 通り… と続きます。</p><p>これは <strong>配置</strong> です：5 つの駒、64 のマス</p>$$
+
+    $$
+  
+
+  
+    
+    
+      
+        <hr>
+<span class='anchor' id="結論"></span>
+<h2><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e7%b5%90%e8%ab%96">#</a><strong>結論</strong></h2><table>
+  <thead>
+      <tr>
+          <th>名前</th>
+          <th>公式</th>
+          <th>順序を考慮するか</th>
+          <th>例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>順列</strong></td>
+          <td>$P(n) = n!$</td>
+          <td>✅ はい</td>
+          <td>5 冊の本を本棚に並べる方法</td>
+      </tr>
+      <tr>
+          <td><strong>配置</strong></td>
+          <td>$A(n, k) = \frac{n!}{(n-k)!}$</td>
+          <td>✅ はい</td>
+          <td>8 人の中から 3 人の勝者を決める</td>
+      </tr>
+      <tr>
+          <td><strong>繰り返しを許す配置</strong></td>
+          <td>$\widetilde{A}(n, k) = n^k$</td>
+          <td>✅ はい</td>
+          <td>アイスクリームを 4 個選ぶ（重複可）</td>
+      </tr>
+      <tr>
+          <td><strong>組み合わせ</strong></td>
+          <td>$C(n, k) = \frac{n!}{k!(n-k)!}$</td>
+          <td>❌ いいえ</td>
+          <td>10 人の中から 3 人を選ぶ</td>
+      </tr>
+      <tr>
+          <td><strong>繰り返しを許す組み合わせ</strong></td>
+          <td>$\widetilde{C}(n, k) = \frac{(n+k-1)!}{k!(n-1)!}$</td>
+          <td>❌ いいえ</td>
+          <td>3 束の花を選ぶ（重複可）</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<span class='anchor' id="いくつかの例"></span>
+<h2><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e3%81%84%e3%81%8f%e3%81%a4%e3%81%8b%e3%81%ae%e4%be%8b">#</a>いくつかの例</h2><span class='anchor' id="1-5-個の-異なる-チェスの駒をボードに配置する方法は何通りか"></span>
+<h4><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#1-5-%e5%80%8b%e3%81%ae-%e7%95%b0%e3%81%aa%e3%82%8b-%e3%83%81%e3%82%a7%e3%82%b9%e3%81%ae%e9%a7%92%e3%82%92%e3%83%9c%e3%83%bc%e3%83%89%e3%81%ab%e9%85%8d%e7%bd%ae%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95%e3%81%af%e4%bd%95%e9%80%9a%e3%82%8a%e3%81%8b">#</a>1. 5 個の <strong>異なる</strong> チェスの駒をボードに配置する方法は何通りか？</h4><p>まず考えるべきこと：本棚に本を並べるときのような単純な順列の公式はここでは使えません。</p>
+<p>1 個目の駒は 64 通り、2 個目は 63 通り、3 個目は 62 通り… と続きます。</p>
+<p>これは <strong>配置</strong> です：5 つの駒、64 のマス</p>
+
+      
+    
+  
+
+  
+    $$
+    
 \boxed{A(64,5) = \frac{64!}{(64-5)!} = \frac{64!}{59!} = 64 \cdot 63 \cdot 62 \cdot 61 \cdot 60}
-$$<p>もし駒が <strong>同じで区別がつかなかったら</strong> どうなるでしょうか？</p><p>基本的には、<strong>同じ方法の数</strong> だけ駒を配置できますが、そこで問題となるのは順列の要素です。<br>駒がすべて区別できないなら、駒同士を入れ替えても実際には同じ配置です。 同じ形の駒をいくら必死に並べ替えても、結果は変わりません。 つまり、駒をボードに配置することはできますが、その駒同士の並び替えは意味がなくなります。 結論として、5 個の同じ駒をボードに配置する方法の数は、<strong>配置</strong> の数から <strong>順列</strong> の要素を抜いたものになります。
-掛け算の原理を思い出しますが、この場合は逆に割り算を使います：</p>$$
+
+    $$
+  
+
+  
+    
+    
+      
+        <p>もし駒が <strong>同じで区別がつかなかったら</strong> どうなるでしょうか？</p>
+<p>基本的には、<strong>同じ方法の数</strong> だけ駒を配置できますが、そこで問題となるのは順列の要素です。<br>
+駒がすべて区別できないなら、駒同士を入れ替えても実際には同じ配置です。 同じ形の駒をいくら必死に並べ替えても、結果は変わりません。 つまり、駒をボードに配置することはできますが、その駒同士の並び替えは意味がなくなります。 結論として、5 個の同じ駒をボードに配置する方法の数は、<strong>配置</strong> の数から <strong>順列</strong> の要素を抜いたものになります。
+掛け算の原理を思い出しますが、この場合は逆に割り算を使います：</p>
+
+      
+    
+  
+
+  
+    $$
+    
 \boxed{C(64,5) = \frac{A(64,5)}{P(5)} = \frac{64!}{5!(64-5)!}}
-$$</article><div class=nextprev><div class=left><a href=https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/ id=prev-article>← ../組合せ論</a></div><div class=right><a href=https://roboticist-git.github.io/Despairendipity/jp/lessons/algebra/ id=next-article>../代数学 →</a></div></div></main></div></body></html>
+
+    $$
+  
+
+  
+    
+    
+      
+        
+      
+    
+  
+
+
+
+        </article>
+        <div class='nextprev'>
+  
+    
+      
+      
+        
+      
+
+      
+      
+      
+        
+          
+        
+      
+
+      
+        <div class='left'>
+        
+          <a href='http://localhost:1313/Despairendipity/jp/lessons/combinatorics/' id='prev-article'>← ../組合せ論</a>
+        
+        </div>
+        <div class='right'>
+        
+          
+          
+          
+
+          
+            
+              
+            
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            <a href='http://localhost:1313/Despairendipity/jp/lessons/algebra/' id='next-article'>../代数学 →</a>
+          
+        
+        </div>
+      
+    
+  
+</div>
+
+      </main>
+      
+
+    </div>
+  </body>
+</html>

@@ -1,1 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Number Theory on Despairendipity</title><link>https://roboticist-git.github.io/Despairendipity/lessons/number-theory/</link><description>Recent content in Number Theory on Despairendipity</description><generator>Hugo</generator><language>en</language><atom:link href="https://roboticist-git.github.io/Despairendipity/lessons/number-theory/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Number Theory on Despairendipity</title>
+    <link>http://localhost:1313/Despairendipity/lessons/number-theory/</link>
+    <description>Recent content in Number Theory on Despairendipity</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/Despairendipity/lessons/number-theory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Part 1. Basic Concepts. Arithmetic of Remainders.</title>
+      <link>http://localhost:1313/Despairendipity/lessons/number-theory/number_theory_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/Despairendipity/lessons/number-theory/number_theory_1/</guid>
+      <description>&lt;span class=&#39;anchor&#39; id=&#34;subject-of-study&#34;&gt;&lt;/span&gt;&#xA;&lt;h2&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/lessons/number-theory/number_theory_1/#subject-of-study&#34;&gt;#&lt;/a&gt;Subject of Study&lt;/h2&gt;&lt;p&gt;This section studies, strangely enough, numbers and their properties. We will examine some of them necessary for the start.&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s start with the types of numbers. The image below shows the types of number sets as nested ellipses. We will move from the smaller to the larger:&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;\mathbb{P} \subset \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure&gt;&#xA;  &lt;img src=&#34;http://localhost:1313/Despairendipity/data/number_theory.svg&#34;&gt;&#xA;  &lt;figcaption&gt;&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;What do these letters mean?&lt;/p&gt;&#xA;&lt;p&gt;$\mathbb{P}$ — the set of prime numbers. Prime numbers are those that are divisible by themselves and by one. The set of prime numbers is not actually a strict subset of natural numbers. True mathematicians may criticize me for the picture I made and for what I wrote, but I will explain my choice as follows: any element (number) of the prime set is also an element of any higher set.&#xA;In this section, we will often work with prime numbers because of their unique properties.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

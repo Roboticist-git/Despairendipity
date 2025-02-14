@@ -166,7 +166,7 @@
   })"></script>
 
   
-  <title>Combinatorics - Despairendipity</title>
+  <title>Part 1. Basic Concepts. Arithmetic of Remainders. - Despairendipity</title>
 </head>
 <body><nav id='sidebar' >
   
@@ -177,12 +177,6 @@
   </div>
   <ul>
     
-      
-        
-        <li class=' '><a href='http://localhost:1313/Despairendipity/lessons/combinatorics/combinatorics_i/'
-          
-          >Combinatorics</a></li>
-        
       
     
   </ul>
@@ -222,7 +216,7 @@
       
     </ul>
   </div>
-  <div class='title'>Combinatorics</div>
+  <div class='title'>Part 1. Basic Concepts. Arithmetic of Remainders.</div>
   <div class='right'>
     <a onClick='window.print()'>
       <img src='http://localhost:1313/Despairendipity/icons/print-solid.svg' title='print'>
@@ -294,37 +288,289 @@
 </div>
 <header>
   
-  <h1>Combinatorics</h1>
+  <h1>Part 1. Basic Concepts. Arithmetic of Remainders.</h1>
   
     <div class='info'><div>
           <span>translations</span>
           
-            <span><a href="http://localhost:1313/Despairendipity/jp/lessons/combinatorics/">jp: 組合せ論</a></span>
+            <span><a href="http://localhost:1313/Despairendipity/jp/lessons/number-theory/number_theory_1/">jp: パート1.基本概念. 剰余算術.</a></span>
           
-            <span><a href="http://localhost:1313/Despairendipity/ru/lessons/combinatorics/">ru: Комбинаторика</a></span>
+            <span><a href="http://localhost:1313/Despairendipity/ru/lessons/number-theory/number_theory_1/">ru: Часть 1.Базовые понятия. Арифметика остатков.</a></span>
           
         </div></div>
   
 </header>
 <article>
   
-    
-      <h1>Combinatorics</h1>
-    
-    <ul>
-      
-        <li><a href="http://localhost:1313/Despairendipity/lessons/combinatorics/combinatorics_i/">Combinatorics</a></li>
-      
-    </ul>
+
+
   
+    
+    
+      
+        <span class='anchor' id="subject-of-study"></span>
+<h2><a class="anchor-link" href="http://localhost:1313/Despairendipity/lessons/number-theory/number_theory_1/#subject-of-study">#</a>Subject of Study</h2><p>This section studies, strangely enough, numbers and their properties. We will examine some of them necessary for the start.</p>
+<p>Let&rsquo;s start with the types of numbers. The image below shows the types of number sets as nested ellipses. We will move from the smaller to the larger:</p>
+
+      
+    
   
 
+  
+    $$
+    
+\mathbb{P} \subset \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}
+
+    $$
+  
+
+  
+    
+    
+      
+        <p><figure>
+  <img src="http://localhost:1313/Despairendipity/data/number_theory.svg">
+  <figcaption></figcaption>
+</figure>
+</p>
+<p>What do these letters mean?</p>
+<p>$\mathbb{P}$ — the set of prime numbers. Prime numbers are those that are divisible by themselves and by one. The set of prime numbers is not actually a strict subset of natural numbers. True mathematicians may criticize me for the picture I made and for what I wrote, but I will explain my choice as follows: any element (number) of the prime set is also an element of any higher set.
+In this section, we will often work with prime numbers because of their unique properties.</p>
+<p><em>Note</em>: One is <strong>not</strong> a prime number because it is only divisible by itself.</p>
+<p>Examples of prime numbers: {$2, ~ 3, ~ 5, ~ 7, ~ 11, ~ 13, ~~ \dots$}</p>
+<hr>
+<p>$\mathbb{N}$ — the set of natural numbers. These are the numbers familiar to us from a young age, those we can use to count the number of objects or our age in years. The set of natural numbers includes <strong>one</strong> as a fundamental building block, with which other numbers in this set are constructed. In fact, any number from the set of prime numbers can also be constructed using ones: $2 = 1+1; ~ ~ ~  5= ~ 1 + 1 + 1 + 1 + 1$ and so on&hellip;</p>
+<p><em>Note</em>: In my lessons, I will consider natural numbers to start from one.</p>
+<hr>
+<p>$\mathbb{Z}$ — the set of integers. It is defined as the union of the set of natural numbers, zero, and negative natural numbers ($\mathbb{Z} = ~ -\mathbb{N} ~ \cup ~ {0} ~ \cup ~ \mathbb{N}$)</p>
+<hr>
+<p>$\mathbb{Q}$ — the set of rational numbers. These are numbers that can be represented as a fraction:</p>
+
+      
+    
+  
+
+  
+    $$
+     \frac{a}{b}, \quad \text{where } a \in \mathbb{Z}, \quad b \in \mathbb{N} 
+    $$
+  
+
+  
+    
+    
+      
+        <p>In other words, <strong>rational numbers</strong> are numbers that can be written as the ratio of two integers, where the denominator is not zero.</p>
+<p>Rational numbers include:</p>
+<ul>
+<li>All <strong>integers</strong>, as any integer can be written as a fraction (e.g., $5 = \frac{5}{1}$).</li>
+<li>All <strong>common fractions</strong>.</li>
+<li>All <strong>finite and repeating decimals</strong> (e.g., $0.3333\ldots = \frac{1}{3}$). However, <strong>not all numbers are rational</strong>. For example, $\pi$ and $\sqrt{2}$ are not rational because they cannot be represented as the ratio of two integers.</li>
+</ul>
+<hr>
+<p>$\mathbb{R}$ — the set of real numbers. These are <strong>all numbers that can be represented on the number line</strong>. The set of real numbers includes:</p>
+<ul>
+<li><strong>All rational numbers</strong> ($\mathbb{Q}$).</li>
+<li><strong>All irrational numbers</strong> — numbers that <strong>cannot be written as a fraction</strong> $\frac{a}{b}$ (e.g., $\pi$, $e$, $\sqrt{2}$). Examples of real numbers:</li>
+</ul>
+
+      
+    
+  
+
+  
+    $$
+     \{-3, \quad 0, \quad \frac{4}{5}, \quad \sqrt{2}, \quad \pi, \quad e \}
+    $$
+  
+
+  
+    
+    
+      
+        <p>Real numbers can be divided into <strong>rational</strong> and <strong>irrational</strong>:</p>
+<ul>
+<li><strong>Rational</strong> — these are finite or repeating decimals.</li>
+<li><strong>Irrational</strong> — these are infinite <strong>non-repeating</strong> decimals, for example:</li>
+</ul>
+      
+    
+  
+
+  
+    $$
+     \pi = 3.1415926535\ldots 
+    $$
+  
 
   
     
     
       
         
+      
+    
+  
+
+  
+    $$
+     \sqrt{2} = 1.4142135623\ldots 
+    $$
+  
+
+  
+    
+    
+      
+        <p>The set <strong>$\mathbb{R}$ is a continuous line of numbers</strong>, unlike the discrete sets <strong>$\mathbb{Z}$ and $\mathbb{N}$</strong>.</p>
+<hr>
+<p>$\mathbb{C}$ — the set of complex numbers.</p>
+<p>Complex numbers are a <strong>generalization</strong> of real numbers $\mathbb{R}$. They are introduced to solve equations that have no solutions in $\mathbb{R}$. For example, the equation:</p>
+
+      
+    
+  
+
+  
+    $$
+     x^2 + 1 = 0 
+    $$
+  
+
+  
+    
+    
+      
+        <p>has no real roots because <strong>no number</strong> squared gives a negative value. Complex numbers can be useful in a number of number theory problems, but we will not delve into them for now.</p>
+<hr>
+<span class='anchor' id="some-useful-notations"></span>
+<h3><a class="anchor-link" href="http://localhost:1313/Despairendipity/lessons/number-theory/number_theory_1/#some-useful-notations">#</a>Some Useful Notations</h3><table>
+  <thead>
+      <tr>
+          <th>Notation</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$[x]$</td>
+          <td>Integer part of $x$ (the largest integer not exceeding $x$)</td>
+      </tr>
+      <tr>
+          <td>$\lbrace x \rbrace$</td>
+          <td>Fractional part of $x$: $\lbrace x \rbrace = x − [x]$</td>
+      </tr>
+      <tr>
+          <td>$n!$</td>
+          <td>Factorial: $n! = 1 \cdot 2 \cdot \dots \cdot n$</td>
+      </tr>
+      <tr>
+          <td>${x_n}$</td>
+          <td>Sequence $x_1, x_2, \dots, x_n$</td>
+      </tr>
+      <tr>
+          <td>$b \mid a$</td>
+          <td>$b$ divides $a$</td>
+      </tr>
+      <tr>
+          <td>$a ~~ \vdots ~~ b$</td>
+          <td>$a$ is a multiple of $b$</td>
+      </tr>
+      <tr>
+          <td>$a \equiv b \pmod{m}$</td>
+          <td>$a$ is congruent to $b$ modulo $m$</td>
+      </tr>
+      <tr>
+          <td>$a \perp b$</td>
+          <td>$a$ and $b$ are coprime</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<span class='anchor' id="congruence-of-numbers"></span>
+<h3><a class="anchor-link" href="http://localhost:1313/Despairendipity/lessons/number-theory/number_theory_1/#congruence-of-numbers">#</a><strong>Congruence of Numbers</strong></h3><p>If $m &gt; 1$ and $(a - b) ~ \vdots ~ m$, then <strong>$a$ and $b$ are congruent modulo $m$</strong>.</p>
+<p>Congruence is written as:</p>
+
+      
+    
+  
+
+  
+    $$
+    
+a \equiv b \pmod{m}
+
+    $$
+  
+
+  
+    
+    
+      
+        <p>If the value of the modulus is clear from the context, the parentheses with the modulus are <strong>usually omitted</strong>.</p>
+<p>Using the notation $a \equiv b \pmod{m}$ instead of the expression $(a - b) ~ \vdots ~ m$ turns out to be a <strong>very convenient and powerful tool</strong> in various problems, because <strong>congruences</strong> can be handled almost like <strong>ordinary equalities</strong>:</p>
+<ul>
+<li><strong>Addition</strong>: if $a \equiv b \pmod{m}$ and $c \equiv d \pmod{m}$, then</li>
+</ul>
+
+      
+    
+  
+
+  
+    $$
+    
+  (a + c) \equiv (b + d) \pmod{m}
+  
+    $$
+  
+
+  
+    
+    
+      
+        <ul>
+<li><strong>Subtraction</strong>:</li>
+</ul>
+
+      
+    
+  
+
+  
+    $$
+    
+  (a - c) \equiv (b - d) \pmod{m}
+  
+    $$
+  
+
+  
+    
+    
+      
+        <ul>
+<li><strong>Multiplication</strong>:</li>
+</ul>
+
+      
+    
+  
+
+  
+    $$
+    
+  (a \cdot c) \equiv (b \cdot d) \pmod{m}
+  
+    $$
+  
+
+  
+    
+    
+      
+        In some cases, it is possible to <strong>divide</strong> by a number if it is coprime with $m$.
+But be especially careful when dividing!
       
     
   
@@ -345,23 +591,32 @@
           
         
       
-        
-      
-        
-      
-        
-      
 
       
         <div class='left'>
         
+          <a href='http://localhost:1313/Despairendipity/lessons/number-theory/' id='prev-article'>← ../Number Theory</a>
+        
         </div>
         <div class='right'>
         
-          <a href='http://localhost:1313/Despairendipity/lessons/combinatorics/combinatorics_i/' id='next-article'>Combinatorics →</a><br>
+          
+          
+          
+
+          
+            
+          
+            
+          
+            
+          
+            
+              
+            
+          
         
-        
-          <a href='http://localhost:1313/Despairendipity/lessons/algebra/'>../Algebra →</a>
+          
         
         </div>
       

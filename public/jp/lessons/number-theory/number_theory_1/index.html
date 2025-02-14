@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang='en'><head><script src="/Despairendipity/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Despairendipity/livereload" data-no-instant defer></script>
+<html lang='jp'><head><script src="/Despairendipity/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Despairendipity/livereload" data-no-instant defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WBN59M8Y5S"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -166,7 +166,7 @@
   })"></script>
 
   
-  <title>Combinatorics - Despairendipity</title>
+  <title>パート1.基本概念. 剰余算術. - Despairendipity</title>
 </head>
 <body><nav id='sidebar' >
   
@@ -177,12 +177,6 @@
   </div>
   <ul>
     
-      
-        
-        <li class=' '><a href='http://localhost:1313/Despairendipity/lessons/combinatorics/combinatorics_i/'
-          
-          >Combinatorics</a></li>
-        
       
     
   </ul>
@@ -222,7 +216,7 @@
       
     </ul>
   </div>
-  <div class='title'>Combinatorics</div>
+  <div class='title'>パート1.基本概念. 剰余算術.</div>
   <div class='right'>
     <a onClick='window.print()'>
       <img src='http://localhost:1313/Despairendipity/icons/print-solid.svg' title='print'>
@@ -294,37 +288,289 @@
 </div>
 <header>
   
-  <h1>Combinatorics</h1>
+  <h1>パート1.基本概念. 剰余算術.</h1>
   
     <div class='info'><div>
           <span>translations</span>
           
-            <span><a href="http://localhost:1313/Despairendipity/jp/lessons/combinatorics/">jp: 組合せ論</a></span>
+            <span><a href="http://localhost:1313/Despairendipity/lessons/number-theory/number_theory_1/">en: Part 1. Basic Concepts. Arithmetic of Remainders.</a></span>
           
-            <span><a href="http://localhost:1313/Despairendipity/ru/lessons/combinatorics/">ru: Комбинаторика</a></span>
+            <span><a href="http://localhost:1313/Despairendipity/ru/lessons/number-theory/number_theory_1/">ru: Часть 1.Базовые понятия. Арифметика остатков.</a></span>
           
         </div></div>
   
 </header>
 <article>
   
-    
-      <h1>Combinatorics</h1>
-    
-    <ul>
-      
-        <li><a href="http://localhost:1313/Despairendipity/lessons/combinatorics/combinatorics_i/">Combinatorics</a></li>
-      
-    </ul>
+
+
   
+    
+    
+      
+        <span class='anchor' id="研究対象"></span>
+<h2><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/number-theory/number_theory_1/#%e7%a0%94%e7%a9%b6%e5%af%be%e8%b1%a1">#</a>研究対象</h2><p>このセクションでは、奇妙なことに、数とその性質について学びます。スタートに必要なもののいくつかを見ていきます。</p>
+<p>まず、どのような数があるかを見てみましょう。以下の画像には、入れ子になった楕円形として数の集合の種類が示されています。小さいものから大きいものへと進んでいきます：</p>
+
+      
+    
   
 
+  
+    $$
+    
+\mathbb{P} \subset \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}
+
+    $$
+  
+
+  
+    
+    
+      
+        <p><figure>
+  <img src="http://localhost:1313/Despairendipity/data/number_theory.svg">
+  <figcaption></figcaption>
+</figure>
+</p>
+<p>これらの文字は何を意味しますか？</p>
+<p>$\mathbb{P}$ — 素数の集合。素数とは、それ自体と1でしか割り切れない数です。実際には、素数の集合は自然数の厳密な部分集合ではありません。真の数学者は私が作った画像や書いたことについて批判するかもしれませんが、私の選択を次のように説明します：素数集合の任意の要素（数）は、上位の任意の集合の要素でもあります。
+このセクションでは、素数のユニークな特性のために、素数を頻繁に扱います。</p>
+<p><em>注</em>: 1は素数ではありません。なぜなら、それは自分自身でしか割り切れないからです。</p>
+<p>素数の例: {$2, ~ 3, ~ 5, ~ 7, ~ 11, ~ 13, ~~ \dots$}</p>
+<hr>
+<p>$\mathbb{N}$ — 自然数の集合。これは幼少期から馴染みのある数であり、物の数や年齢を数えるために使います。自然数の集合には、他の数を構成する基本的なブロックとして<strong>1</strong>が含まれます。実際、素数の集合の任意の数も1を使って構成できます：$2 = 1+1; ~ ~ ~  5= ~ 1 + 1 + 1 + 1 + 1$ など&hellip;</p>
+<p><em>注</em>: 私のレッスンでは、自然数は1から始まると考えます。</p>
+<hr>
+<p>$\mathbb{Z}$ — 整数の集合。これは、自然数の集合、ゼロ、および負の自然数の統合として定義されます ($\mathbb{Z} = ~ -\mathbb{N} ~ \cup ~ {0} ~ \cup ~ \mathbb{N}$)</p>
+<hr>
+<p>$\mathbb{Q}$ — 有理数の集合。これは分数の形で表すことができる数です：</p>
+
+      
+    
+  
+
+  
+    $$
+     \frac{a}{b}, \quad \text{ここで } a \in \mathbb{Z}, \quad b \in \mathbb{N} 
+    $$
+  
+
+  
+    
+    
+      
+        <p>言い換えれば、<strong>有理数</strong>は、分母がゼロでない2つの整数の比として表すことができる数です。</p>
+<p>有理数には以下が含まれます：</p>
+<ul>
+<li><strong>すべての整数</strong>、なぜなら任意の整数は分数の形で表すことができるからです（例えば、$5 = \frac{5}{1}$）。</li>
+<li><strong>すべての通常の分数</strong>。</li>
+<li><strong>すべての有限小数および循環小数</strong>（例えば、$0.3333\ldots = \frac{1}{3}$）。しかし、<strong>すべての数が有理数であるわけではありません</strong>。例えば、$\pi$や$\sqrt{2}$は有理数ではありません。なぜなら、それらは2つの整数の比として表すことができないからです。</li>
+</ul>
+<hr>
+<p>$\mathbb{R}$ — 実数の集合。これは<strong>数直線上に表すことができるすべての数</strong>です。実数の集合には以下が含まれます：</p>
+<ul>
+<li><strong>すべての有理数</strong> ($\mathbb{Q}$)。</li>
+<li><strong>すべての無理数</strong> — <strong>分数の形で表すことができない数</strong>（例えば、$\pi$、$e$、$\sqrt{2}$）。実数の例：</li>
+</ul>
+
+      
+    
+  
+
+  
+    $$
+     \{-3, \quad 0, \quad \frac{4}{5}, \quad \sqrt{2}, \quad \pi, \quad e \}
+    $$
+  
+
+  
+    
+    
+      
+        <p>実数は<strong>有理数</strong>と<strong>無理数</strong>に分けることができます：</p>
+<ul>
+<li><strong>有理数</strong> — 有限小数または循環小数。</li>
+<li><strong>無理数</strong> — 無限の<strong>非循環小数</strong>、例えば：</li>
+</ul>
+      
+    
+  
+
+  
+    $$
+     \pi = 3.1415926535\ldots 
+    $$
+  
 
   
     
     
       
         
+      
+    
+  
+
+  
+    $$
+     \sqrt{2} = 1.4142135623\ldots 
+    $$
+  
+
+  
+    
+    
+      
+        <p><strong>$\mathbb{R}$の集合は連続した数の線</strong>であり、<strong>$\mathbb{Z}$や$\mathbb{N}$のような離散的な集合とは異なります</strong>。</p>
+<hr>
+<p>$\mathbb{C}$ — 複素数の集合。</p>
+<p>複素数は実数$\mathbb{R}$の<strong>一般化</strong>です。これは、$\mathbb{R}$では解決できない方程式を解くために導入されます。例えば、方程式：</p>
+
+      
+    
+  
+
+  
+    $$
+     x^2 + 1 = 0 
+    $$
+  
+
+  
+    
+    
+      
+        <p>は実数の根を持ちません。なぜなら、<strong>どの数も</strong>二乗すると負の値を与えないからです。複素数は数論のいくつかの問題で役立つことがありますが、ここではそれに深入りしません。</p>
+<hr>
+<span class='anchor' id="いくつかの便利な記号"></span>
+<h3><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/number-theory/number_theory_1/#%e3%81%84%e3%81%8f%e3%81%a4%e3%81%8b%e3%81%ae%e4%be%bf%e5%88%a9%e3%81%aa%e8%a8%98%e5%8f%b7">#</a>いくつかの便利な記号</h3><table>
+  <thead>
+      <tr>
+          <th>記号</th>
+          <th>説明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$[x]$</td>
+          <td>数$x$の整数部分（$x$以下の最大の整数）</td>
+      </tr>
+      <tr>
+          <td>$\lbrace x \rbrace$</td>
+          <td>数$x$の小数部分：$\lbrace x \rbrace = x − [x]$</td>
+      </tr>
+      <tr>
+          <td>$n!$</td>
+          <td>階乗：$n! = 1 \cdot 2 \cdot \dots \cdot n$</td>
+      </tr>
+      <tr>
+          <td>${x_n}$</td>
+          <td>数列 $x_1, x_2, \dots, x_n$</td>
+      </tr>
+      <tr>
+          <td>$b \mid a$</td>
+          <td>$b$は$a$を割り切る</td>
+      </tr>
+      <tr>
+          <td>$a ~~ \vdots ~~ b$</td>
+          <td>$a$は$b$の倍数</td>
+      </tr>
+      <tr>
+          <td>$a \equiv b \pmod{m}$</td>
+          <td>$a$は$m$を法として$b$と合同</td>
+      </tr>
+      <tr>
+          <td>$a \perp b$</td>
+          <td>$a$と$b$は互いに素</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<span class='anchor' id="数の合同"></span>
+<h3><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/number-theory/number_theory_1/#%e6%95%b0%e3%81%ae%e5%90%88%e5%90%8c">#</a><strong>数の合同</strong></h3><p>もし $m &gt; 1$ かつ $(a - b) ~ \vdots ~ m$ ならば、<strong>$a$ と $b$ は法 $m$ で合同である</strong>と言います。</p>
+<p>合同は次のように書かれます：</p>
+
+      
+    
+  
+
+  
+    $$
+    
+a \equiv b \pmod{m}
+
+    $$
+  
+
+  
+    
+    
+      
+        <p>もしモジュラスの値が文脈から明らかであれば、括弧内のモジュラスの指定は<strong>通常省略されます</strong>。</p>
+<p>$(a - b) ~ \vdots ~ m$ の代わりに $a \equiv b \pmod{m}$ を使用することは、さまざまな問題において<strong>非常に便利で強力なツール</strong>となります。なぜなら、<strong>合同</strong>は<strong>通常の等式</strong>とほぼ同じように扱うことができるからです：</p>
+<ul>
+<li><strong>加算</strong>：もし $a \equiv b \pmod{m}$ かつ $c \equiv d \pmod{m}$ ならば</li>
+</ul>
+
+      
+    
+  
+
+  
+    $$
+    
+  (a + c) \equiv (b + d) \pmod{m}
+  
+    $$
+  
+
+  
+    
+    
+      
+        <ul>
+<li><strong>減算</strong>：</li>
+</ul>
+
+      
+    
+  
+
+  
+    $$
+    
+  (a - c) \equiv (b - d) \pmod{m}
+  
+    $$
+  
+
+  
+    
+    
+      
+        <ul>
+<li><strong>乗算</strong>：</li>
+</ul>
+
+      
+    
+  
+
+  
+    $$
+    
+  (a \cdot c) \equiv (b \cdot d) \pmod{m}
+  
+    $$
+  
+
+  
+    
+    
+      
+        場合によっては、$m$ と互いに素である数で<strong>除算</strong>することもできます。
+しかし、除算には特に注意が必要です！
       
     
   
@@ -337,6 +583,8 @@
     
       
       
+        
+      
 
       
       
@@ -345,23 +593,32 @@
           
         
       
-        
-      
-        
-      
-        
-      
 
       
         <div class='left'>
         
+          <a href='http://localhost:1313/Despairendipity/jp/lessons/number-theory/' id='prev-article'>← ../数論</a>
+        
         </div>
         <div class='right'>
         
-          <a href='http://localhost:1313/Despairendipity/lessons/combinatorics/combinatorics_i/' id='next-article'>Combinatorics →</a><br>
+          
+          
+          
+
+          
+            
+          
+            
+          
+            
+          
+            
+              
+            
+          
         
-        
-          <a href='http://localhost:1313/Despairendipity/lessons/algebra/'>../Algebra →</a>
+          
         
         </div>
       

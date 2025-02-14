@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang='ru'><head><script src="/Despairendipity/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Despairendipity/livereload" data-no-instant defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WBN59M8Y5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WBN59M8Y5S');
+</script>
+
+
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(53961409, "init", {
+       clickmap:true,
+       trackLinks:true,
+       accurateTrackBounce:true,
+       webvisor:true
+  });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/53961409" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<meta charset="utf-8">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/Despairendipity/style.min.2ffdf2c5cce2a52f296b518961369259f79ed0f5c566dbf381630464e347e879.css" integrity="sha256-L/3yxczipS8pa1GJYTaSWfee0PXFZtvzgWMEZONH6Hk=">
+  <link rel="stylesheet" href="http://localhost:1313/Despairendipity/syntax.css" id="syntax-theme">
+
+  <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+  <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+  <script src="http://localhost:1313/Despairendipity/scripts/lunr.stemmer.support.min.js"></script>
+  <script src="http://localhost:1313/Despairendipity/scripts/lunr.ru.min.js"></script>
+  <script src="http://localhost:1313/Despairendipity/scripts/lunr.multi.min.js"></script>
+
+  
+  <link rel="stylesheet" id="theme">
+
+  <script>
+    function toggleSidebar() {
+      var sidebar = document.getElementById('sidebar')
+      var wrapper = document.getElementById('wrapper')
+      if (sidebar.classList.contains('sidebar-toggled') || window.getComputedStyle(sidebar).display == 'block') { 
+        sidebar.classList.toggle('sidebar-hidden')
+        wrapper.classList.toggle('sidebar-hidden')
+      }
+      sidebar.classList.add('sidebar-toggled')
+      wrapper.classList.add('sidebar-toggled')
+    }
+
+    function switchTheme(theme) {
+      document.getElementById('theme').href = (theme == 'dark' ? "http:\/\/localhost:1313\/Despairendipity\/dark.min.5114c62348434e1065911b055f0f10ce23c81c38cec0a28ec43fe3fc065fb3db.css" : "")
+      document.getElementById('syntax-theme').href = (theme == 'dark' ? '\/syntax-dark.css' : '\/syntax.css')
+      localStorage.setItem('theme', theme)
+    }
+
+    async function toggleSearch() {
+      var searchDiv = document.getElementById('search')
+      if (window.getComputedStyle(searchDiv).display == 'none') {
+        searchDiv.style.display = 'block'
+        window.scrollTo({ top: 0 });
+        document.getElementById('search-bar').focus()
+      } else {
+        searchDiv.style.display = 'none'  
+      }
+
+      if (!index) {
+        const response = await fetch('\/searchindex.json')
+        const pages = await response.json()
+        index = lunr(function() {
+          this.use(lunr.multiLanguage('en', 'ru'))
+          this.field('title', { boost: 5 })
+          this.field('content', { boost: 1 })
+          pages.forEach(function(doc) {
+            this.add(doc)
+            articles.push(doc)
+          }, this)
+        })
+      }
+    }
+
+    var articles = []
+    var index = undefined
+
+    function search() {
+      var query = document.getElementById('search-bar').value
+      var resultsDiv = document.getElementById('search-results')
+      var countDiv = document.getElementById('search-count')
+      
+      if (query == '') {
+        resultsDiv.innerHTML = ''
+        countDiv.innerHTML = ''
+        return
+      }
+      
+      var results = index.search(query)
+
+      countDiv.innerHTML = 'Found <b>' + results.length + '</b> pages'
+
+      let resultList = ''
+
+      for (const n in results) {
+        const item = articles[results[n].ref]
+        resultList += '<li><a href="' + item.path + '">' + item.title + '</a> <p>'
+        const text = item.content
+
+        const contextLimit = 80
+
+        if (text.includes(query)) {
+          const start = text.indexOf(query)
+          if (start > contextLimit)
+            resultList += '…'
+          resultList += text.substring(start - contextLimit, start)
+                      + '<b>' + query + '</b>' + text.substring(start + query.length, start + query.length + contextLimit)
+
+        } else {
+          resultList += text.substring(0, contextLimit * 2)
+        }
+        resultList += '…</p></li>'
+      }
+
+      resultsDiv.innerHTML = resultList
+    }
+
+    if (localStorage.getItem('theme') == 'dark') {
+      switchTheme('dark')
+    }
+
+    window.addEventListener('load', function() {
+      var el = document.getElementById("active-element")
+      if (el) {
+        el.scrollIntoView({block: "center"})
+      }
+    })
+
+    window.addEventListener('scroll', function() {
+      var menu = document.getElementById('menu')
+      if (window.scrollY < 120) {
+        menu.classList.remove('scrolled')
+      } else {
+        menu.classList.add('scrolled')
+      }
+    })
+
+    window.addEventListener('keydown', function(e) {
+      if (e.altKey) { return }
+      if (document.activeElement.tagName == 'INPUT') { return }
+      if (e.key == 'ArrowLeft') {
+        document.getElementById('prev-article').click()
+      } else if (e.key == 'ArrowRight') {
+        document.getElementById('next-article').click()
+      }
+    })
+  </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  })"></script>
+
+  
+  <title>Часть 1.Базовые понятия. Арифметика остатков. - Despairendipity</title>
+</head>
+<body><nav id='sidebar' >
+  
+  
+  <div class='title'>
+    <a href='http://localhost:1313/Despairendipity/'>Despairendipity</a>
+    
+  </div>
+  <ul>
+    
+      
+    
+  </ul>
+</nav>
+<div id='wrapper' ><menu id='menu'>
+  
+  
+  <div class='left'>
+    <a>
+      <img src='http://localhost:1313/Despairendipity/icons/bars-solid.svg'
+           onclick='toggleSidebar()'
+           title='open table of contents'>
+    </a>
+    <a>
+      <img src='http://localhost:1313/Despairendipity/icons/adjust-solid.svg'
+           style='position: relative; top: -1px'
+           onclick='switchTheme(localStorage.getItem("theme") == "dark" ? "light" : "dark")'
+           title='dark theme'>
+    </a>
+    <a>
+      <img src='http://localhost:1313/Despairendipity/icons/search-solid.svg'
+           onclick='toggleSearch()'
+           title='search'>
+    </a>
+    <a class="language-switch">
+      <img src='http://localhost:1313/Despairendipity/icons/language-solid.svg'
+           onclick='toggleLanguageMenu(event)'
+           title='change language'>
+    </a>
+    <ul id="language-menu" class="dropdown-menu">
+      
+        <li><a href="http://localhost:1313/Despairendipity/en/">en</a></li>
+      
+        <li><a href="http://localhost:1313/Despairendipity/jp/">jp</a></li>
+      
+        <li><a href="http://localhost:1313/Despairendipity/ru/">ru</a></li>
+      
+    </ul>
+  </div>
+  <div class='title'>Часть 1.Базовые понятия. Арифметика остатков.</div>
+  <div class='right'>
+    <a onClick='window.print()'>
+      <img src='http://localhost:1313/Despairendipity/icons/print-solid.svg' title='print'>
+    </a>
+
+    <a href='https://github.com/Roboticist-git/Despairendipity' class='github-main'>
+      <img src='http://localhost:1313/Despairendipity/icons/github-brands.svg' title='View on GitHub'>
+    </a>    
+  </div>
+</menu>
+
+<script>
+  function toggleLanguageMenu(event) {
+    event.stopPropagation(); 
+    var menu = document.getElementById("language-menu");
+    menu.classList.toggle("visible");
+  }
+
+  document.addEventListener("click", function(event) {
+    var menu = document.getElementById("language-menu");
+    if (!event.target.closest(".language-switch")) {
+      menu.classList.remove("visible");
+    }
+  });
+</script>
+
+<style>
+  .language-switch {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 30px;
+    background: #222;
+    padding: 5px;
+    border-radius: 5px;
+    list-style: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .dropdown-menu.visible {
+    display: block;
+  }
+
+  .dropdown-menu li {
+    padding: 5px;
+  }
+
+  .dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-menu li a:hover {
+    background: #333;
+  }
+</style>
+<main>
+        <div id="search">
+    <input id="search-bar" type="search" placeholder='Search this book…' oninput="search()">
+    <div id="search-count"></div>
+    <div id="search-results">
+    </div>
+</div>
+<header>
+  
+  <h1>Часть 1.Базовые понятия. Арифметика остатков.</h1>
+  
+    <div class='info'><div>
+          <span>translations</span>
+          
+            <span><a href="http://localhost:1313/Despairendipity/lessons/number-theory/number_theory_1/">en: Part 1. Basic Concepts. Arithmetic of Remainders.</a></span>
+          
+            <span><a href="http://localhost:1313/Despairendipity/jp/lessons/number-theory/number_theory_1/">jp: パート1.基本概念. 剰余算術.</a></span>
+          
+        </div></div>
+  
+</header>
+<article>
+  
+
+
+  
+    
+    
+      
+        <span class='anchor' id="объект-изучения"></span>
+<h2><a class="anchor-link" href="http://localhost:1313/Despairendipity/ru/lessons/number-theory/number_theory_1/#%d0%be%d0%b1%d1%8a%d0%b5%d0%ba%d1%82-%d0%b8%d0%b7%d1%83%d1%87%d0%b5%d0%bd%d0%b8%d1%8f">#</a>Объект изучения</h2><p>Данный подраздел изучает, как ни странно, числа, их свойства. Мы разберём некоторые из них, необходимые для старта.</p>
+<p>Начнём с того какие числа бывают. На изображении ниже представлены виды числовых множеств в виде вложенных эллипсов. Будет двигаться от меньшего к большему:</p>
+
+      
+    
+  
+
+  
+    $$
+    
+\mathbb{P} \subset \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}
+
+    $$
+  
+
+  
+    
+    
+      
+        <p><figure>
+  <img src="http://localhost:1313/Despairendipity/data/number_theory.svg">
+  <figcaption></figcaption>
+</figure>
+</p>
+<p>Что означают данные буквы?</p>
+<p>$\mathbb{P}$ — множество простых чисел. Простые числа это те которые делятся на себя и на единицу. Множество простых чисел на самом деле не является строгим подмножеством натуральных чисел. Настоящие математики могут ругать меня за ту картинку что я сделал и за то что я написал, но я объясню свой выбор таким образом: любой элемент (число) простого множества также является элементом любого вышестоящего множества.
+В данном разделе мы часто будем работать с простыми числами из-за их уникальных свойств.</p>
+<p><em>Примечание</em>: единица <strong>не является</strong> простым числом, так как она делится только на себя</p>
+<p>Пример простых чисел:    {$2, ~ 3, ~ 5, ~ 7, ~ 11, ~ 13, ~~ \dots$}</p>
+<hr>
+<p>$\mathbb{N}$ — множество натуральных чисел. Это знакомые нам с малых лет числа, те которыми мы можем считать количество объектов или наш возраст в годах. В множество натуральных чисел входит <strong>единица</strong> как основополагающий кирпичик, с помощью которого строятся другие числа из этого множества. Впрочем, любое число из множества простых чисел также можно построить с помощью единичек:    $2 = 1+1; ~ ~ ~  5= ~ 1 + 1 + 1 + 1 + 1$  и так далее&hellip;</p>
+<p><em>Примечание:</em> в своих уроках я буду считать что натуральные числа начинаются с единицы.</p>
+<hr>
+<p>$\mathbb{Z}$ — множество целых чисел. Определяется как объединение множества $\mathbb{N}$, нуля, и отрицательных натуральных   ($\mathbb{Z} = ~ -\mathbb{N} ~ \cup ~ {0} ~ \cup ~ \mathbb{N}$)</p>
+<hr>
+<p>$\mathbb{Q}$ — множество рациональных чисел. Это числа, которые можно представить в виде дроби:</p>
+
+      
+    
+  
+
+  
+    $$
+     \frac{a}{b}, \quad \text{где } a \in \mathbb{Z}, \quad b \in \mathbb{N} 
+    $$
+  
+
+  
+    
+    
+      
+        <p>Другими словами, <strong>рациональные числа</strong> — это числа, которые можно записать в виде отношения двух целых чисел, где знаменатель не равен нулю.</p>
+<p>Рациональные числа включают в себя:</p>
+<ul>
+<li>Все <strong>целые числа</strong>, так как любое целое можно записать в виде дроби (например, $5 = \frac{5}{1}$).</li>
+<li>Все <strong>обыкновенные дроби</strong>.</li>
+<li>Все <strong>конечные и периодические десятичные дроби</strong> (например, $0.3333\ldots = \frac{1}{3}$). Но <strong>не все числа рациональны</strong>. Например, $\pi$ и $\sqrt{2}$ не являются рациональными, так как их нельзя представить в виде отношения двух целых чисел.</li>
+</ul>
+<hr>
+<p>$\mathbb{R}$ — множество действительных чисел. Это <strong>все числа, которые можно изобразить на числовой прямой</strong>. Множество действительных чисел включает в себя:</p>
+<ul>
+<li><strong>Все рациональные числа</strong> ($\mathbb{Q}$).</li>
+<li><strong>Все иррациональные числа</strong> — числа, которые <strong>не могут быть записаны в виде дроби</strong> $\frac{a}{b}$ (например, $\pi$, $e$, $\sqrt{2}$). Примеры действительных чисел:</li>
+</ul>
+
+      
+    
+  
+
+  
+    $$
+     \{-3, \quad 0, \quad \frac{4}{5}, \quad \sqrt{2}, \quad \pi, \quad e \}
+    $$
+  
+
+  
+    
+    
+      
+        Действительные числа можно разделить на <strong>рациональные</strong> и <strong>иррациональные</strong>: - <strong>Рациональные</strong> — это конечные или периодические десятичные дроби. - <strong>Иррациональные</strong> — это бесконечные <strong>непериодические</strong> десятичные дроби, например:
+      
+    
+  
+
+  
+    $$
+     \pi = 3.1415926535\ldots 
+    $$
+  
+
+  
+    
+    
+      
+        
+      
+    
+  
+
+  
+    $$
+     \sqrt{2} = 1.4142135623\ldots 
+    $$
+  
+
+  
+    
+    
+      
+        <p>Множество <strong>$\mathbb{R}$ — это непрерывная линия чисел</strong>, в отличие от дискретных множеств <strong>$\mathbb{Z}$ и $\mathbb{N}$</strong>.</p>
+<hr>
+<p>$\mathbb{C}$ — множество комплексных чисел.</p>
+<p>Комплексные числа являются <strong>обобщением</strong> действительных чисел $\mathbb{R}$. Они вводятся для того, чтобы решить уравнения, не имеющие решений в $\mathbb{R}$. Например, уравнение:</p>
+
+      
+    
+  
+
+  
+    $$
+     x^2 + 1 = 0 
+    $$
+  
+
+  
+    
+    
+      
+        <p>не имеет действительных корней, так как <strong>никакое число</strong> при возведении в квадрат не даёт отрицательное значение. Комплексные числа могут быть полезны в ряде задач Теории чисел, но пока мы не будем углубляться в них.</p>
+<hr>
+<span class='anchor' id="некоторые-полезные-обозначения"></span>
+<h3><a class="anchor-link" href="http://localhost:1313/Despairendipity/ru/lessons/number-theory/number_theory_1/#%d0%bd%d0%b5%d0%ba%d0%be%d1%82%d0%be%d1%80%d1%8b%d0%b5-%d0%bf%d0%be%d0%bb%d0%b5%d0%b7%d0%bd%d1%8b%d0%b5-%d0%be%d0%b1%d0%be%d0%b7%d0%bd%d0%b0%d1%87%d0%b5%d0%bd%d0%b8%d1%8f">#</a>Некоторые полезные обозначения</h3><table>
+  <thead>
+      <tr>
+          <th>Обозначение</th>
+          <th>Описание</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$[x]$</td>
+          <td>Целая часть числа $x$ (наибольшее целое, не превосходящее $x$)</td>
+      </tr>
+      <tr>
+          <td>$\lbrace x \rbrace$</td>
+          <td>Дробная часть числа $x$:   $\lbrace x \rbrace = x − [x]$</td>
+      </tr>
+      <tr>
+          <td>$n!$</td>
+          <td>Факториал: $n! = 1 \cdot 2 \cdot \dots \cdot n$</td>
+      </tr>
+      <tr>
+          <td>${x_n}$</td>
+          <td>Последовательность   $x_1, x_2, \dots, x_n$</td>
+      </tr>
+      <tr>
+          <td>$b \mid a$</td>
+          <td>$b$ делит $a$</td>
+      </tr>
+      <tr>
+          <td>$a ~~ \vdots ~~ b$</td>
+          <td>$a$ кратно $b$</td>
+      </tr>
+      <tr>
+          <td>$a \equiv b \pmod{m}$</td>
+          <td>$a$ сравнимо с $b$ по модулю $m$</td>
+      </tr>
+      <tr>
+          <td>$a \perp b$</td>
+          <td>$a$ и $b$ взаимно просты</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<span class='anchor' id="сравнимость-чисел-по-модулю"></span>
+<h3><a class="anchor-link" href="http://localhost:1313/Despairendipity/ru/lessons/number-theory/number_theory_1/#%d1%81%d1%80%d0%b0%d0%b2%d0%bd%d0%b8%d0%bc%d0%be%d1%81%d1%82%d1%8c-%d1%87%d0%b8%d1%81%d0%b5%d0%bb-%d0%bf%d0%be-%d0%bc%d0%be%d0%b4%d1%83%d0%bb%d1%8e">#</a><strong>Сравнимость чисел по модулю</strong></h3><p>Если $m &gt; 1$ и $(a - b) ~ \vdots ~ m$, то говорят, что <strong>$a$ и $b$ сравнимы по модулю $m$</strong>.</p>
+<p>Сравнимость записывают так:</p>
+
+      
+    
+  
+
+  
+    $$
+    
+a \equiv b \pmod{m}
+
+    $$
+  
+
+  
+    
+    
+      
+        <p>Если значение модуля очевидно из контекста, то скобки с указанием модуля <strong>обычно опускают</strong>.</p>
+<p>Использование записи $a \equiv b \pmod{m}$ вместо выражения $(a - b) ~ \vdots ~ m$ оказывается <strong>очень удобным и мощным инструментом</strong> в различных задачах, потому что со <strong>сравнениями</strong> можно работать почти так же, как с <strong>обычными равенствами</strong>:</p>
+<ul>
+<li><strong>Складывать</strong>: если $a \equiv b \pmod{m}$ и $c \equiv d \pmod{m}$, то</li>
+</ul>
+
+      
+    
+  
+
+  
+    $$
+    
+  (a + c) \equiv (b + d) \pmod{m}
+  
+    $$
+  
+
+  
+    
+    
+      
+        <ul>
+<li><strong>Вычитать</strong>:</li>
+</ul>
+
+      
+    
+  
+
+  
+    $$
+    
+  (a - c) \equiv (b - d) \pmod{m}
+  
+    $$
+  
+
+  
+    
+    
+      
+        <ul>
+<li><strong>Умножать</strong>:</li>
+</ul>
+
+      
+    
+  
+
+  
+    $$
+    
+  (a \cdot c) \equiv (b \cdot d) \pmod{m}
+  
+    $$
+  
+
+  
+    
+    
+      
+        В некоторых случаях можно <strong>делить</strong> на число, если оно взаимно просто с $m$.<br>
+Но при делении нужно быть особенно внимательным!
+      
+    
+  
+
+
+
+        </article>
+        <div class='nextprev'>
+  
+    
+      
+      
+        
+      
+
+      
+      
+      
+        
+          
+        
+      
+
+      
+        <div class='left'>
+        
+          <a href='http://localhost:1313/Despairendipity/ru/lessons/number-theory/' id='prev-article'>← ../Теория чисел</a>
+        
+        </div>
+        <div class='right'>
+        
+          
+          
+          
+
+          
+            
+          
+            
+          
+            
+          
+            
+              
+            
+          
+        
+          
+        
+        </div>
+      
+    
+  
+</div>
+
+      </main>
+      
+
+    </div>
+  </body>
+</html>

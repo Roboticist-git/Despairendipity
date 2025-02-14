@@ -1,4 +1,5 @@
 resources/
+Despairendipity_DATA/
 hugo_stats.json
 *.log
 .hugo_build.lock

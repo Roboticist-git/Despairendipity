@@ -1,18 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Despairendipity</title><link>https://roboticist-git.github.io/Despairendipity/ru/</link><description>Recent content on Despairendipity</description><generator>Hugo</generator><language>ru</language><lastBuildDate>Mon, 10 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://roboticist-git.github.io/Despairendipity/ru/index.xml" rel="self" type="application/rss+xml"/><item><title>Комбинаторика</title><link>https://roboticist-git.github.io/Despairendipity/ru/lessons/combinatorics/combinatorics_i/</link><pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate><guid>https://roboticist-git.github.io/Despairendipity/ru/lessons/combinatorics/combinatorics_i/</guid><description>&lt;span class='anchor' id="часть-i">&lt;/span>
-&lt;h1>&lt;a class="anchor-link" href="https://roboticist-git.github.io/Despairendipity/ru/lessons/combinatorics/combinatorics_i/#%d1%87%d0%b0%d1%81%d1%82%d1%8c-i">#&lt;/a>Часть I.&lt;/h1>&lt;p>Что такое комбинаторика? Это раздел математики, изучающий способы выбора, упорядочивания и подсчёта различных конфигураций элементов. Что можно считать &amp;ldquo;элементами&amp;rdquo;? Это могут быть как физические объекты, так и абстрактные математические сущности, например, числа, множества или графы.&lt;/p>
-&lt;p>Тут разберём основные принципы комбинаторики: принципы сложения, умножения, а также понятие &lt;strong>перестановок&lt;/strong>, &lt;strong>сочетаний&lt;/strong>, &lt;strong>размещений&lt;/strong>&lt;/p>
-&lt;span class='anchor' id="принцип-сложения">&lt;/span>
-&lt;h4>&lt;a class="anchor-link" href="https://roboticist-git.github.io/Despairendipity/ru/lessons/combinatorics/combinatorics_i/#%d0%bf%d1%80%d0%b8%d0%bd%d1%86%d0%b8%d0%bf-%d1%81%d0%bb%d0%be%d0%b6%d0%b5%d0%bd%d0%b8%d1%8f">#&lt;/a>Принцип сложения:&lt;/h4>&lt;p>У нас есть 100 монет (подставьте название валюты какое угодно) чтобы купить поесть.
-Придя в магазин у нас &amp;ldquo;есть выбор&amp;rdquo;: онигири за 99 монет, бургер за 100 монет, а также газировка за 70 монет, кофе за 100 монет, мороженное за 65 монет.&lt;/p></description></item><item><title>Неравенства: Основные свойства и примеры</title><link>https://roboticist-git.github.io/Despairendipity/ru/lessons/algebra/inequality/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://roboticist-git.github.io/Despairendipity/ru/lessons/algebra/inequality/</guid><description>&lt;span class='anchor' id="часть-i">&lt;/span>
-&lt;h1>&lt;a class="anchor-link" href="https://roboticist-git.github.io/Despairendipity/ru/lessons/algebra/inequality/#%d1%87%d0%b0%d1%81%d1%82%d1%8c-i">#&lt;/a>Часть I.&lt;/h1>&lt;p>Это первая тема, о которой пойдёт речь. Многие сталкиваются с трудностями при решении задач на неравенства, для кого-то тяжело осознать, почему одна величина больше другой. Но с неравенством в реальной жизни так или иначе сталкиваются все, поэтому тема важна.&lt;/p>
-&lt;span class='anchor' id="основные-свойства">&lt;/span>
-&lt;h2>&lt;a class="anchor-link" href="https://roboticist-git.github.io/Despairendipity/ru/lessons/algebra/inequality/#%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%bd%d1%8b%d0%b5-%d1%81%d0%b2%d0%be%d0%b9%d1%81%d1%82%d0%b2%d0%b0">#&lt;/a>Основные свойства&lt;/h2>&lt;p>$$
-\begin{cases}
-a &amp;lt; b \[10pt]
-b &amp;lt; c
-\end{cases}
-\quad \implies \quad a &amp;lt; c \tag{1}
-$$&lt;/p>
-&lt;p>$$
-a &amp;lt; b \implies a \pm m &amp;lt; b \pm m \tag{2}
-$$&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Despairendipity</title>
+    <link>http://localhost:1313/Despairendipity/ru/</link>
+    <description>Recent content on Despairendipity</description>
+    <generator>Hugo</generator>
+    <language>ru</language>
+    <lastBuildDate>Mon, 10 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/Despairendipity/ru/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Комбинаторика</title>
+      <link>http://localhost:1313/Despairendipity/ru/lessons/combinatorics/combinatorics_i/</link>
+      <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/Despairendipity/ru/lessons/combinatorics/combinatorics_i/</guid>
+      <description>&lt;span class=&#39;anchor&#39; id=&#34;часть-i&#34;&gt;&lt;/span&gt;&#xA;&lt;h1&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/ru/lessons/combinatorics/combinatorics_i/#%d1%87%d0%b0%d1%81%d1%82%d1%8c-i&#34;&gt;#&lt;/a&gt;Часть I.&lt;/h1&gt;&lt;p&gt;Что такое комбинаторика? Это раздел математики, изучающий способы выбора, упорядочивания и подсчёта различных конфигураций элементов. Что можно считать &amp;ldquo;элементами&amp;rdquo;? Это могут быть как физические объекты, так и абстрактные математические сущности, например, числа, множества или графы.&lt;/p&gt;&#xA;&lt;p&gt;Тут разберём основные принципы комбинаторики: принципы сложения, умножения, а также понятие &lt;strong&gt;перестановок&lt;/strong&gt;, &lt;strong&gt;сочетаний&lt;/strong&gt;, &lt;strong&gt;размещений&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;span class=&#39;anchor&#39; id=&#34;принцип-сложения&#34;&gt;&lt;/span&gt;&#xA;&lt;h4&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/ru/lessons/combinatorics/combinatorics_i/#%d0%bf%d1%80%d0%b8%d0%bd%d1%86%d0%b8%d0%bf-%d1%81%d0%bb%d0%be%d0%b6%d0%b5%d0%bd%d0%b8%d1%8f&#34;&gt;#&lt;/a&gt;Принцип сложения:&lt;/h4&gt;&lt;p&gt;У нас есть 100 монет (подставьте название валюты какое угодно) чтобы купить поесть.&#xA;Придя в магазин у нас &amp;ldquo;есть выбор&amp;rdquo;: онигири за 99 монет, бургер за 100 монет, а также газировка за 70 монет, кофе за 100 монет, мороженное за 65 монет.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Неравенства: Основные свойства и примеры</title>
+      <link>http://localhost:1313/Despairendipity/ru/lessons/algebra/inequality/</link>
+      <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/Despairendipity/ru/lessons/algebra/inequality/</guid>
+      <description>&lt;span class=&#39;anchor&#39; id=&#34;часть-i&#34;&gt;&lt;/span&gt;&#xA;&lt;h1&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/ru/lessons/algebra/inequality/#%d1%87%d0%b0%d1%81%d1%82%d1%8c-i&#34;&gt;#&lt;/a&gt;Часть I.&lt;/h1&gt;&lt;p&gt;Это первая тема, о которой пойдёт речь. Многие сталкиваются с трудностями при решении задач на неравенства, для кого-то тяжело осознать, почему одна величина больше другой. Но с неравенством в реальной жизни так или иначе сталкиваются все, поэтому тема важна.&lt;/p&gt;&#xA;&lt;span class=&#39;anchor&#39; id=&#34;основные-свойства&#34;&gt;&lt;/span&gt;&#xA;&lt;h2&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/ru/lessons/algebra/inequality/#%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%bd%d1%8b%d0%b5-%d1%81%d0%b2%d0%be%d0%b9%d1%81%d1%82%d0%b2%d0%b0&#34;&gt;#&lt;/a&gt;Основные свойства&lt;/h2&gt;&lt;p&gt;$$&#xA;\begin{cases}&#xA;a &amp;lt; b \[10pt]&#xA;b &amp;lt; c&#xA;\end{cases}&#xA;\quad \implies \quad a &amp;lt; c \tag{1}&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;a &amp;lt; b \implies a \pm m &amp;lt; b \pm m \tag{2}&#xA;$$&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Часть 1.Базовые понятия. Арифметика остатков.</title>
+      <link>http://localhost:1313/Despairendipity/ru/lessons/number-theory/number_theory_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/Despairendipity/ru/lessons/number-theory/number_theory_1/</guid>
+      <description>&lt;span class=&#39;anchor&#39; id=&#34;объект-изучения&#34;&gt;&lt;/span&gt;&#xA;&lt;h2&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/ru/lessons/number-theory/number_theory_1/#%d0%be%d0%b1%d1%8a%d0%b5%d0%ba%d1%82-%d0%b8%d0%b7%d1%83%d1%87%d0%b5%d0%bd%d0%b8%d1%8f&#34;&gt;#&lt;/a&gt;Объект изучения&lt;/h2&gt;&lt;p&gt;Данный подраздел изучает, как ни странно, числа, их свойства. Мы разберём некоторые из них, необходимые для старта.&lt;/p&gt;&#xA;&lt;p&gt;Начнём с того какие числа бывают. На изображении ниже представлены виды числовых множеств в виде вложенных эллипсов. Будет двигаться от меньшего к большему:&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;\mathbb{P} \subset \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure&gt;&#xA;  &lt;img src=&#34;http://localhost:1313/Despairendipity/data/number_theory.svg&#34;&gt;&#xA;  &lt;figcaption&gt;&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Что означают данные буквы?&lt;/p&gt;&#xA;&lt;p&gt;$\mathbb{P}$ — множество простых чисел. Простые числа это те которые делятся на себя и на единицу. Множество простых чисел на самом деле не является строгим подмножеством натуральных чисел. Настоящие математики могут ругать меня за ту картинку что я сделал и за то что я написал, но я объясню свой выбор таким образом: любой элемент (число) простого множества также является элементом любого вышестоящего множества.&#xA;В данном разделе мы часто будем работать с простыми числами из-за их уникальных свойств.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

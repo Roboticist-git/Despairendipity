@@ -1,6 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Combinatorics on Despairendipity</title><link>https://roboticist-git.github.io/Despairendipity/lessons/combinatorics/</link><description>Recent content in Combinatorics on Despairendipity</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 10 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://roboticist-git.github.io/Despairendipity/lessons/combinatorics/index.xml" rel="self" type="application/rss+xml"/><item><title>Combinatorics</title><link>https://roboticist-git.github.io/Despairendipity/lessons/combinatorics/combinatorics_i/</link><pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate><guid>https://roboticist-git.github.io/Despairendipity/lessons/combinatorics/combinatorics_i/</guid><description>&lt;span class='anchor' id="part-i">&lt;/span>
-&lt;h1>&lt;a class="anchor-link" href="https://roboticist-git.github.io/Despairendipity/lessons/combinatorics/combinatorics_i/#part-i">#&lt;/a>Part I.&lt;/h1>&lt;p>What is combinatorics? It is a branch of mathematics that studies methods of selecting, ordering, and counting various configurations of elements. What can be considered “elements”? They can be physical objects as well as abstract mathematical entities, such as numbers, sets, or graphs.&lt;/p>
-&lt;p>Here we will examine the basic principles of combinatorics: the principles of addition and multiplication, as well as the concepts of &lt;strong>permutations&lt;/strong>, &lt;strong>combinations&lt;/strong>, and &lt;strong>arrangements&lt;/strong>.&lt;/p>
-&lt;span class='anchor' id="principle-of-addition">&lt;/span>
-&lt;h4>&lt;a class="anchor-link" href="https://roboticist-git.github.io/Despairendipity/lessons/combinatorics/combinatorics_i/#principle-of-addition">#&lt;/a>Principle of Addition:&lt;/h4>&lt;p>We have 100 coins (insert any currency name) to buy some food.
-Upon arriving at the store, we have a “choice”: onigiri for 99 coins, a burger for 100 coins, as well as a soda for 70 coins, coffee for 100 coins, and ice cream for 65 coins.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Combinatorics on Despairendipity</title>
+    <link>http://localhost:1313/Despairendipity/lessons/combinatorics/</link>
+    <description>Recent content in Combinatorics on Despairendipity</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 10 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/Despairendipity/lessons/combinatorics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Combinatorics</title>
+      <link>http://localhost:1313/Despairendipity/lessons/combinatorics/combinatorics_i/</link>
+      <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/Despairendipity/lessons/combinatorics/combinatorics_i/</guid>
+      <description>&lt;span class=&#39;anchor&#39; id=&#34;part-i&#34;&gt;&lt;/span&gt;&#xA;&lt;h1&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/lessons/combinatorics/combinatorics_i/#part-i&#34;&gt;#&lt;/a&gt;Part I.&lt;/h1&gt;&lt;p&gt;What is combinatorics? It is a branch of mathematics that studies methods of selecting, ordering, and counting various configurations of elements. What can be considered “elements”? They can be physical objects as well as abstract mathematical entities, such as numbers, sets, or graphs.&lt;/p&gt;&#xA;&lt;p&gt;Here we will examine the basic principles of combinatorics: the principles of addition and multiplication, as well as the concepts of &lt;strong&gt;permutations&lt;/strong&gt;, &lt;strong&gt;combinations&lt;/strong&gt;, and &lt;strong&gt;arrangements&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;span class=&#39;anchor&#39; id=&#34;principle-of-addition&#34;&gt;&lt;/span&gt;&#xA;&lt;h4&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/lessons/combinatorics/combinatorics_i/#principle-of-addition&#34;&gt;#&lt;/a&gt;Principle of Addition:&lt;/h4&gt;&lt;p&gt;We have 100 coins (insert any currency name) to buy some food.&#xA;Upon arriving at the store, we have a “choice”: onigiri for 99 coins, a burger for 100 coins, as well as a soda for 70 coins, coffee for 100 coins, and ice cream for 65 coins.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

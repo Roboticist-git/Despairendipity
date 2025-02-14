@@ -1,90 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>日本語 on Despairendipity</title><link>https://roboticist-git.github.io/Despairendipity/jp/</link><description>Recent content in 日本語 on Despairendipity</description><generator>Hugo</generator><language>jp</language><lastBuildDate>Mon, 10 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://roboticist-git.github.io/Despairendipity/jp/index.xml" rel="self" type="application/rss+xml"/><item><title>組み合わせ論</title><link>https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/</link><pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate><guid>https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/</guid><description>&lt;span class='anchor' id="パート-i">&lt;/span>
-&lt;h1>&lt;a class="anchor-link" href="https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e3%83%91%e3%83%bc%e3%83%88-i">#&lt;/a>パート I.&lt;/h1>&lt;p>組み合わせ論とは何でしょうか？ これは、さまざまな要素の構成を選択し、順序付けし、数え上げる方法を研究する数学の一分野です。 「要素」とは何を指すのでしょうか？ それは物理的なオブジェクトであっても、数、集合、あるいはグラフなどの抽象的な数学的実体であってもかまいません。&lt;/p>
-&lt;p>ここでは組み合わせ論の主要な原理、つまり加法原理、乗法原理、そして &lt;strong>順列&lt;/strong>、&lt;strong>組み合わせ&lt;/strong>、&lt;strong>配置&lt;/strong> の概念を取り上げます。&lt;/p>
-&lt;span class='anchor' id="プリンシプル加法原理">&lt;/span>
-&lt;h4>&lt;a class="anchor-link" href="https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b7%e3%83%97%e3%83%ab%e5%8a%a0%e6%b3%95%e5%8e%9f%e7%90%86">#&lt;/a>プリンシプル（加法原理）:&lt;/h4>&lt;p>私たちには 100 枚のコイン（通貨の名称は何でもよい）があります。これで食べ物を買おうとします。
-お店に来ると、次のような「選択肢」がありました： おにぎり（99 コイン）、ハンバーガー（100 コイン）、炭酸飲料（70 コイン）、コーヒー（100 コイン）、アイスクリーム（65 コイン）。&lt;/p>
-&lt;p>利用できるものを買う方法は何通りあるでしょうか？&lt;/p>
-&lt;p>5 つの候補から &lt;strong>何か 1 つ&lt;/strong> を選ぶことができるので、$\implies$ 合計で 5 通りです。&lt;/p>
-&lt;p>🔹形式的には：組み合わせ論における加法原理は、相互に &lt;strong>独立&lt;/strong> しているすべての可能な方法を足し合わせることで、全体の可能な方法の総数を得ることを意味します。&lt;/p>
-&lt;span class='anchor' id="プリンシプル乗法原理">&lt;/span>
-&lt;h4>&lt;a class="anchor-link" href="https://roboticist-git.github.io/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b7%e3%83%97%e3%83%ab%e4%b9%97%e6%b3%95%e5%8e%9f%e7%90%86">#&lt;/a>プリンシプル（乗法原理）:&lt;/h4>&lt;p>朝、授業に行く準備をするとき、今日はどんな服装で行くか選ぶ必要があります。&lt;/p>
-&lt;p>上（トップス）： 黒いシャツ ($A$)、黒いフーディー ($B$)、グレーの T シャツ ($C$)&lt;br>
-下（ボトムス）： 黒いジーンズ ($D$)、ダークブルーのズボン ($E$)&lt;/p>
-&lt;p>服装のバリエーションを表にまとめます：&lt;/p>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>上&lt;/th>
- &lt;th>下&lt;/th>
- &lt;th>&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>$A$&lt;/td>
- &lt;td>$D$&lt;/td>
- &lt;td>黒いシャツと黒いジーンズ&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>$A$&lt;/td>
- &lt;td>$E$&lt;/td>
- &lt;td>黒いシャツとダークブルーのズボン&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>$B$&lt;/td>
- &lt;td>$D$&lt;/td>
- &lt;td>黒いフーディーと黒いジーンズ&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>$B$&lt;/td>
- &lt;td>$E$&lt;/td>
- &lt;td>黒いフーディーとダークブルーのズボン&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>$C$&lt;/td>
- &lt;td>$D$&lt;/td>
- &lt;td>グレーの T シャツと黒いジーンズ&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>$C$&lt;/td>
- &lt;td>$E$&lt;/td>
- &lt;td>グレーの T シャツとダークブルーのズボン&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;p>表から分かるように、合計 6 通りの組み合わせがあります。 ここでのポイントは、ズボンを穿かなかったり上を着なかったりという選択肢は（おそらく）ないということです。 とはいえ、日々の生活に少しでも変化を加えようと思えば、服を自由に組み合わせることができます。 さらに、ズボンとトップスを着るとき、それをどちらを先に着るかは &lt;strong>問題にならない&lt;/strong> ということも重要です。 この点がなぜ重要かというと、今後、いくつかの状況では要素の &lt;strong>順序&lt;/strong> が決定的な役割を果たすからです。&lt;/p></description></item><item><title>不等式: 基本的な性質と例</title><link>https://roboticist-git.github.io/Despairendipity/jp/lessons/algebra/inequality/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://roboticist-git.github.io/Despairendipity/jp/lessons/algebra/inequality/</guid><description>&lt;span class='anchor' id="第1部">&lt;/span>
-&lt;h1>&lt;a class="anchor-link" href="https://roboticist-git.github.io/Despairendipity/jp/lessons/algebra/inequality/#%e7%ac%ac1%e9%83%a8">#&lt;/a>第1部&lt;/h1>&lt;p>これは最初のテーマです。不等式の問題を解く際に、多くの人が困難に直面します。ある数が別の数より大きい理由を理解するのが難しい人もいます。しかし、現実世界では誰もが不等式に直面するため、このトピックは重要です。&lt;/p>
-&lt;span class='anchor' id="基本的な性質">&lt;/span>
-&lt;h2>&lt;a class="anchor-link" href="https://roboticist-git.github.io/Despairendipity/jp/lessons/algebra/inequality/#%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa%e6%80%a7%e8%b3%aa">#&lt;/a>基本的な性質&lt;/h2>&lt;p>$$
-\begin{cases}
-a &amp;lt; b \[10pt]
-b &amp;lt; c
-\end{cases}
-\quad \implies \quad a &amp;lt; c \tag{1}
-$$&lt;/p>
-&lt;p>$$
-a &amp;lt; b \implies a \pm m &amp;lt; b \pm m \tag{2}
-$$&lt;/p>
-&lt;p>$$
-a &amp;lt; b \quad\iff\quad -a &amp;gt; -b \tag{3}
-$$&lt;/p>
-&lt;p>&lt;figure>
- &lt;img src="https://roboticist-git.github.io/Despairendipity/data/lineX.svg">
- &lt;figcaption>&lt;/figcaption>
-&lt;/figure>
-&lt;/p>
-&lt;p>なお、(3) より、$-a$ から 0 までの距離と、0 から $a$ までの距離は等しいことがわかります。したがって、&lt;strong>符号に関係なく、距離は常に非負の量である&lt;/strong> と言えます。現実世界では、2つの物体の間の距離は「存在する」か「存在しない」かのどちらかであり、負の距離は存在しません。このため、&lt;strong>絶対値&lt;/strong> という概念が導入されます。これは、ある値が他の値とどれだけ離れているか、またはどれだけ上回っているかを示すものです。（絶対値については別の記事で詳しく説明します。）&lt;/p>
-&lt;p>&lt;figure>
- &lt;img src="https://roboticist-git.github.io/Despairendipity/data/animation.gif">
- &lt;figcaption>&lt;/figcaption>
-&lt;/figure>
-&lt;/p>
-&lt;span class='anchor' id="3-から導かれる追加の性質">&lt;/span>
-&lt;h3>&lt;a class="anchor-link" href="https://roboticist-git.github.io/Despairendipity/jp/lessons/algebra/inequality/#3-%e3%81%8b%e3%82%89%e5%b0%8e%e3%81%8b%e3%82%8c%e3%82%8b%e8%bf%bd%e5%8a%a0%e3%81%ae%e6%80%a7%e8%b3%aa">#&lt;/a>(3) から導かれる追加の性質&lt;/h3>&lt;p>$$
-\begin{cases}
-a &amp;lt; b \[10pt]
-c &amp;gt; 0
-\end{cases}
-\quad \implies \quad a \cdot c &amp;lt; b \cdot c \tag{4}
-$$&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>日本語 on Despairendipity</title>
+    <link>http://localhost:1313/Despairendipity/jp/</link>
+    <description>Recent content in 日本語 on Despairendipity</description>
+    <generator>Hugo</generator>
+    <language>jp</language>
+    <lastBuildDate>Mon, 10 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/Despairendipity/jp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>組み合わせ論</title>
+      <link>http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/</link>
+      <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/</guid>
+      <description>&lt;span class=&#39;anchor&#39; id=&#34;パート-i&#34;&gt;&lt;/span&gt;&#xA;&lt;h1&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e3%83%91%e3%83%bc%e3%83%88-i&#34;&gt;#&lt;/a&gt;パート I.&lt;/h1&gt;&lt;p&gt;組み合わせ論とは何でしょうか？ これは、さまざまな要素の構成を選択し、順序付けし、数え上げる方法を研究する数学の一分野です。 「要素」とは何を指すのでしょうか？ それは物理的なオブジェクトであっても、数、集合、あるいはグラフなどの抽象的な数学的実体であってもかまいません。&lt;/p&gt;&#xA;&lt;p&gt;ここでは組み合わせ論の主要な原理、つまり加法原理、乗法原理、そして &lt;strong&gt;順列&lt;/strong&gt;、&lt;strong&gt;組み合わせ&lt;/strong&gt;、&lt;strong&gt;配置&lt;/strong&gt; の概念を取り上げます。&lt;/p&gt;&#xA;&lt;span class=&#39;anchor&#39; id=&#34;プリンシプル加法原理&#34;&gt;&lt;/span&gt;&#xA;&lt;h4&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b7%e3%83%97%e3%83%ab%e5%8a%a0%e6%b3%95%e5%8e%9f%e7%90%86&#34;&gt;#&lt;/a&gt;プリンシプル（加法原理）:&lt;/h4&gt;&lt;p&gt;私たちには 100 枚のコイン（通貨の名称は何でもよい）があります。これで食べ物を買おうとします。&#xA;お店に来ると、次のような「選択肢」がありました： おにぎり（99 コイン）、ハンバーガー（100 コイン）、炭酸飲料（70 コイン）、コーヒー（100 コイン）、アイスクリーム（65 コイン）。&lt;/p&gt;&#xA;&lt;p&gt;利用できるものを買う方法は何通りあるでしょうか？&lt;/p&gt;&#xA;&lt;p&gt;5 つの候補から &lt;strong&gt;何か 1 つ&lt;/strong&gt; を選ぶことができるので、$\implies$ 合計で 5 通りです。&lt;/p&gt;&#xA;&lt;p&gt;🔹形式的には：組み合わせ論における加法原理は、相互に &lt;strong&gt;独立&lt;/strong&gt; しているすべての可能な方法を足し合わせることで、全体の可能な方法の総数を得ることを意味します。&lt;/p&gt;&#xA;&lt;span class=&#39;anchor&#39; id=&#34;プリンシプル乗法原理&#34;&gt;&lt;/span&gt;&#xA;&lt;h4&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/jp/lessons/combinatorics/combinatorics_i/#%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b7%e3%83%97%e3%83%ab%e4%b9%97%e6%b3%95%e5%8e%9f%e7%90%86&#34;&gt;#&lt;/a&gt;プリンシプル（乗法原理）:&lt;/h4&gt;&lt;p&gt;朝、授業に行く準備をするとき、今日はどんな服装で行くか選ぶ必要があります。&lt;/p&gt;&#xA;&lt;p&gt;上（トップス）： 黒いシャツ ($A$)、黒いフーディー ($B$)、グレーの T シャツ ($C$)&lt;br&gt;&#xA;下（ボトムス）： 黒いジーンズ ($D$)、ダークブルーのズボン ($E$)&lt;/p&gt;&#xA;&lt;p&gt;服装のバリエーションを表にまとめます：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;上&lt;/th&gt;&#xA;          &lt;th&gt;下&lt;/th&gt;&#xA;          &lt;th&gt;&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;$A$&lt;/td&gt;&#xA;          &lt;td&gt;$D$&lt;/td&gt;&#xA;          &lt;td&gt;黒いシャツと黒いジーンズ&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;$A$&lt;/td&gt;&#xA;          &lt;td&gt;$E$&lt;/td&gt;&#xA;          &lt;td&gt;黒いシャツとダークブルーのズボン&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;$B$&lt;/td&gt;&#xA;          &lt;td&gt;$D$&lt;/td&gt;&#xA;          &lt;td&gt;黒いフーディーと黒いジーンズ&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;$B$&lt;/td&gt;&#xA;          &lt;td&gt;$E$&lt;/td&gt;&#xA;          &lt;td&gt;黒いフーディーとダークブルーのズボン&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;$C$&lt;/td&gt;&#xA;          &lt;td&gt;$D$&lt;/td&gt;&#xA;          &lt;td&gt;グレーの T シャツと黒いジーンズ&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;$C$&lt;/td&gt;&#xA;          &lt;td&gt;$E$&lt;/td&gt;&#xA;          &lt;td&gt;グレーの T シャツとダークブルーのズボン&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;表から分かるように、合計 6 通りの組み合わせがあります。 ここでのポイントは、ズボンを穿かなかったり上を着なかったりという選択肢は（おそらく）ないということです。 とはいえ、日々の生活に少しでも変化を加えようと思えば、服を自由に組み合わせることができます。 さらに、ズボンとトップスを着るとき、それをどちらを先に着るかは &lt;strong&gt;問題にならない&lt;/strong&gt; ということも重要です。 この点がなぜ重要かというと、今後、いくつかの状況では要素の &lt;strong&gt;順序&lt;/strong&gt; が決定的な役割を果たすからです。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>不等式: 基本的な性質と例</title>
+      <link>http://localhost:1313/Despairendipity/jp/lessons/algebra/inequality/</link>
+      <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/Despairendipity/jp/lessons/algebra/inequality/</guid>
+      <description>&lt;span class=&#39;anchor&#39; id=&#34;第1部&#34;&gt;&lt;/span&gt;&#xA;&lt;h1&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/jp/lessons/algebra/inequality/#%e7%ac%ac1%e9%83%a8&#34;&gt;#&lt;/a&gt;第1部&lt;/h1&gt;&lt;p&gt;これは最初のテーマです。不等式の問題を解く際に、多くの人が困難に直面します。ある数が別の数より大きい理由を理解するのが難しい人もいます。しかし、現実世界では誰もが不等式に直面するため、このトピックは重要です。&lt;/p&gt;&#xA;&lt;span class=&#39;anchor&#39; id=&#34;基本的な性質&#34;&gt;&lt;/span&gt;&#xA;&lt;h2&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/jp/lessons/algebra/inequality/#%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa%e6%80%a7%e8%b3%aa&#34;&gt;#&lt;/a&gt;基本的な性質&lt;/h2&gt;&lt;p&gt;$$&#xA;\begin{cases}&#xA;a &amp;lt; b \[10pt]&#xA;b &amp;lt; c&#xA;\end{cases}&#xA;\quad \implies \quad a &amp;lt; c \tag{1}&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;a &amp;lt; b \implies a \pm m &amp;lt; b \pm m \tag{2}&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;a &amp;lt; b \quad\iff\quad -a &amp;gt; -b \tag{3}&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure&gt;&#xA;  &lt;img src=&#34;http://localhost:1313/Despairendipity/data/lineX.svg&#34;&gt;&#xA;  &lt;figcaption&gt;&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;なお、(3) より、$-a$ から 0 までの距離と、0 から $a$ までの距離は等しいことがわかります。したがって、&lt;strong&gt;符号に関係なく、距離は常に非負の量である&lt;/strong&gt; と言えます。現実世界では、2つの物体の間の距離は「存在する」か「存在しない」かのどちらかであり、負の距離は存在しません。このため、&lt;strong&gt;絶対値&lt;/strong&gt; という概念が導入されます。これは、ある値が他の値とどれだけ離れているか、またはどれだけ上回っているかを示すものです。（絶対値については別の記事で詳しく説明します。）&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure&gt;&#xA;  &lt;img src=&#34;http://localhost:1313/Despairendipity/data/animation.gif&#34;&gt;&#xA;  &lt;figcaption&gt;&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;span class=&#39;anchor&#39; id=&#34;3-から導かれる追加の性質&#34;&gt;&lt;/span&gt;&#xA;&lt;h3&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/jp/lessons/algebra/inequality/#3-%e3%81%8b%e3%82%89%e5%b0%8e%e3%81%8b%e3%82%8c%e3%82%8b%e8%bf%bd%e5%8a%a0%e3%81%ae%e6%80%a7%e8%b3%aa&#34;&gt;#&lt;/a&gt;(3) から導かれる追加の性質&lt;/h3&gt;&lt;p&gt;$$&#xA;\begin{cases}&#xA;a &amp;lt; b \[10pt]&#xA;c &amp;gt; 0&#xA;\end{cases}&#xA;\quad \implies \quad a \cdot c &amp;lt; b \cdot c \tag{4}&#xA;$$&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>パート1.基本概念. 剰余算術.</title>
+      <link>http://localhost:1313/Despairendipity/jp/lessons/number-theory/number_theory_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/Despairendipity/jp/lessons/number-theory/number_theory_1/</guid>
+      <description>&lt;span class=&#39;anchor&#39; id=&#34;研究対象&#34;&gt;&lt;/span&gt;&#xA;&lt;h2&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/jp/lessons/number-theory/number_theory_1/#%e7%a0%94%e7%a9%b6%e5%af%be%e8%b1%a1&#34;&gt;#&lt;/a&gt;研究対象&lt;/h2&gt;&lt;p&gt;このセクションでは、奇妙なことに、数とその性質について学びます。スタートに必要なもののいくつかを見ていきます。&lt;/p&gt;&#xA;&lt;p&gt;まず、どのような数があるかを見てみましょう。以下の画像には、入れ子になった楕円形として数の集合の種類が示されています。小さいものから大きいものへと進んでいきます：&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;\mathbb{P} \subset \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure&gt;&#xA;  &lt;img src=&#34;http://localhost:1313/Despairendipity/data/number_theory.svg&#34;&gt;&#xA;  &lt;figcaption&gt;&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;これらの文字は何を意味しますか？&lt;/p&gt;&#xA;&lt;p&gt;$\mathbb{P}$ — 素数の集合。素数とは、それ自体と1でしか割り切れない数です。実際には、素数の集合は自然数の厳密な部分集合ではありません。真の数学者は私が作った画像や書いたことについて批判するかもしれませんが、私の選択を次のように説明します：素数集合の任意の要素（数）は、上位の任意の集合の要素でもあります。&#xA;このセクションでは、素数のユニークな特性のために、素数を頻繁に扱います。&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;注&lt;/em&gt;: 1は素数ではありません。なぜなら、それは自分自身でしか割り切れないからです。&lt;/p&gt;&#xA;&lt;p&gt;素数の例: {$2, ~ 3, ~ 5, ~ 7, ~ 11, ~ 13, ~~ \dots$}&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;$\mathbb{N}$ — 自然数の集合。これは幼少期から馴染みのある数であり、物の数や年齢を数えるために使います。自然数の集合には、他の数を構成する基本的なブロックとして&lt;strong&gt;1&lt;/strong&gt;が含まれます。実際、素数の集合の任意の数も1を使って構成できます：$2 = 1+1; ~ ~ ~  5= ~ 1 + 1 + 1 + 1 + 1$ など&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;注&lt;/em&gt;: 私のレッスンでは、自然数は1から始まると考えます。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;$\mathbb{Z}$ — 整数の集合。これは、自然数の集合、ゼロ、および負の自然数の統合として定義されます ($\mathbb{Z} = ~ -\mathbb{N} ~ \cup ~ {0} ~ \cup ~ \mathbb{N}$)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

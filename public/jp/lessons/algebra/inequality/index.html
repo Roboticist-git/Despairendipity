@@ -1,57 +1,608 @@
-<!doctype html><html lang=jp><head><script async src="https://www.googletagmanager.com/gtag/js?id=G-WBN59M8Y5S"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-WBN59M8Y5S")</script><script type=text/javascript>(function(e,t,n,s,o,i,a){e[o]=e[o]||function(){(e[o].a=e[o].a||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym"),ym(53961409,"init",{clickmap:!0,trackLinks:!0,accurateTrackBounce:!0,webvisor:!0})</script><noscript><div><img src=https://mc.yandex.ru/watch/53961409 style=position:absolute;left:-9999px alt></div></noscript><meta charset=utf-8><link rel=stylesheet href=https://roboticist-git.github.io/Despairendipity/Despairendipity/style.min.2ffdf2c5cce2a52f296b518961369259f79ed0f5c566dbf381630464e347e879.css integrity="sha256-L/3yxczipS8pa1GJYTaSWfee0PXFZtvzgWMEZONH6Hk="><link rel=stylesheet href=https://roboticist-git.github.io/Despairendipity/syntax.css id=syntax-theme><link rel=stylesheet type=text/css href=https://tikzjax.com/v1/fonts.css><script src=https://tikzjax.com/v1/tikzjax.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js></script><script src=https://roboticist-git.github.io/Despairendipity/scripts/lunr.stemmer.support.min.js></script><script src=https://roboticist-git.github.io/Despairendipity/scripts/lunr.ru.min.js></script><script src=https://roboticist-git.github.io/Despairendipity/scripts/lunr.multi.min.js></script><link rel=stylesheet id=theme><script>function toggleSidebar(){console.log("Toggling sidebar visibility");var e=document.getElementById("sidebar"),t=document.getElementById("wrapper");(e.classList.contains("sidebar-toggled")||window.getComputedStyle(e).display=="block")&&(e.classList.toggle("sidebar-hidden"),t.classList.toggle("sidebar-hidden")),e.classList.add("sidebar-toggled"),t.classList.add("sidebar-toggled")}function switchTheme(e){console.log("Changing theme:",e),document.getElementById("theme").href=e=="dark"?"/Despairendipity/dark.min.5114c62348434e1065911b055f0f10ce23c81c38cec0a28ec43fe3fc065fb3db.css":"",document.getElementById("syntax-theme").href=e=="dark"?"/syntax-dark.css":"/syntax.css",localStorage.setItem("theme",e)}async function toggleSearch(){console.log("Toggling search");var e=document.getElementById("search");if(window.getComputedStyle(e).display=="none"?(e.style.display="block",window.scrollTo({top:0}),document.getElementById("search-bar").focus()):e.style.display="none",!index){console.log("Fetching index");const e=await fetch("/searchindex.json"),t=await e.json();index=lunr(function(){this.use(lunr.multiLanguage("en","ru")),this.field("title",{boost:5}),this.field("content",{boost:1}),t.forEach(function(e){this.add(e),articles.push(e)},this)}),console.log("Ready to search")}}var articles=[],index=void 0;function search(){var n,e=document.getElementById("search-bar").value,s=document.getElementById("search-results"),o=document.getElementById("search-count");if(e==""){s.innerHTML="",o.innerHTML="";return}n=index.search(e),o.innerHTML="Found <b>"+n.length+"</b> pages";let t="";for(const a in n){const i=articles[n[a].ref];t+='<li><a href="'+i.path+'">'+i.title+"</a> <p>";const s=i.content,o=80;if(s.includes(e)){const n=s.indexOf(e);n>o&&(t+="…"),t+=s.substring(n-o,n)+"<b>"+e+"</b>"+s.substring(n+e.length,n+e.length+o)}else t+=s.substring(0,o*2);t+="…</p></li>"}s.innerHTML=t}localStorage.getItem("theme")=="dark"&&switchTheme("dark"),window.addEventListener("load",function(){var e=document.getElementById("active-element");e&&e.scrollIntoView({block:"center"})}),window.addEventListener("scroll",function(){var e=document.getElementById("menu");window.scrollY<120?e.classList.remove("scrolled"):e.classList.add("scrolled")}),window.addEventListener("keydown",function(e){if(e.altKey)return;if(document.activeElement.tagName=="INPUT")return;e.key=="ArrowLeft"?document.getElementById("prev-article").click():e.key=="ArrowRight"&&document.getElementById("next-article").click()})</script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css integrity=sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js integrity=sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js integrity=sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}]})'></script><title>不等式: 基本的な性質と例 - Despairendipity</title></head><body><nav id=sidebar><div class=title><a href=https://roboticist-git.github.io/Despairendipity/>Despairendipity</a></div><ul></ul></nav><div id=wrapper><menu id=menu><div class=left><a><img src=https://roboticist-git.github.io/Despairendipity/icons/bars-solid.svg onclick=toggleSidebar() title='open table of contents'>
-</a><a><img src=https://roboticist-git.github.io/Despairendipity/icons/adjust-solid.svg style=position:relative;top:-1px onclick='switchTheme(localStorage.getItem("theme")=="dark"?"light":"dark")' title='dark theme'>
-</a><a><img src=https://roboticist-git.github.io/Despairendipity/icons/search-solid.svg onclick=toggleSearch() title=search>
-</a><a class=language-switch><img src=https://roboticist-git.github.io/Despairendipity/icons/language-solid.svg onclick=toggleLanguageMenu(event) title='change language'></a><ul id=language-menu class=dropdown-menu><li><a href=https://roboticist-git.github.io/Despairendipity/en/>en</a></li><li><a href=https://roboticist-git.github.io/Despairendipity/jp/>jp</a></li><li><a href=https://roboticist-git.github.io/Despairendipity/ru/>ru</a></li></ul></div><div class=title>不等式: 基本的な性質と例</div><div class=right><a onclick=window.print()><img src=https://roboticist-git.github.io/Despairendipity/icons/print-solid.svg title=print>
-</a><a href=https://github.com/Roboticist-git/Despairendipity class=github-main><img src=https://roboticist-git.github.io/Despairendipity/icons/github-brands.svg title='View on GitHub'></a></div></menu><script>function toggleLanguageMenu(e){e.stopPropagation();var t=document.getElementById("language-menu");t.classList.toggle("visible")}document.addEventListener("click",function(e){var t=document.getElementById("language-menu");e.target.closest(".language-switch")||t.classList.remove("visible")})</script><style>.language-switch{position:relative;cursor:pointer}.dropdown-menu{display:none;position:absolute;left:0;top:30px;background:#222;padding:5px;border-radius:5px;list-style:none;box-shadow:0 2px 5px rgba(0,0,0,.2)}.dropdown-menu.visible{display:block}.dropdown-menu li{padding:5px}.dropdown-menu li a{color:#fff;text-decoration:none;display:block}.dropdown-menu li a:hover{background:#333}</style><main><div id=search><input id=search-bar type=search placeholder='Search this book…' oninput=search()><div id=search-count></div><div id=search-results></div></div><header><h1>不等式: 基本的な性質と例</h1><div class=info><div><span>updated</span>
-<span>Feb 9, 2025</span></div><div><span>translations</span>
-<span><a href=https://roboticist-git.github.io/Despairendipity/lessons/algebra/inequality/>en: Inequalities: Basic Properties and Examples</a></span>
-<span><a href=https://roboticist-git.github.io/Despairendipity/ru/lessons/algebra/inequality/>ru: Неравенства: Основные свойства и примеры</a></span></div></div></header><article><span class=anchor id=第1部></span><h1><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/algebra/inequality/#%e7%ac%ac1%e9%83%a8>#</a>第1部</h1><p>これは最初のテーマです。不等式の問題を解く際に、多くの人が困難に直面します。ある数が別の数より大きい理由を理解するのが難しい人もいます。しかし、現実世界では誰もが不等式に直面するため、このトピックは重要です。</p><span class=anchor id=基本的な性質></span><h2><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/algebra/inequality/#%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa%e6%80%a7%e8%b3%aa>#</a>基本的な性質</h2>$$
+<!doctype html>
+<html lang='jp'><head><script src="/Despairendipity/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Despairendipity/livereload" data-no-instant defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WBN59M8Y5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WBN59M8Y5S');
+</script>
+
+
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(53961409, "init", {
+       clickmap:true,
+       trackLinks:true,
+       accurateTrackBounce:true,
+       webvisor:true
+  });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/53961409" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<meta charset="utf-8">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/Despairendipity/style.min.2ffdf2c5cce2a52f296b518961369259f79ed0f5c566dbf381630464e347e879.css" integrity="sha256-L/3yxczipS8pa1GJYTaSWfee0PXFZtvzgWMEZONH6Hk=">
+  <link rel="stylesheet" href="http://localhost:1313/Despairendipity/syntax.css" id="syntax-theme">
+
+  <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+  <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+  <script src="http://localhost:1313/Despairendipity/scripts/lunr.stemmer.support.min.js"></script>
+  <script src="http://localhost:1313/Despairendipity/scripts/lunr.ru.min.js"></script>
+  <script src="http://localhost:1313/Despairendipity/scripts/lunr.multi.min.js"></script>
+
+  
+  <link rel="stylesheet" id="theme">
+
+  <script>
+    function toggleSidebar() {
+      var sidebar = document.getElementById('sidebar')
+      var wrapper = document.getElementById('wrapper')
+      if (sidebar.classList.contains('sidebar-toggled') || window.getComputedStyle(sidebar).display == 'block') { 
+        sidebar.classList.toggle('sidebar-hidden')
+        wrapper.classList.toggle('sidebar-hidden')
+      }
+      sidebar.classList.add('sidebar-toggled')
+      wrapper.classList.add('sidebar-toggled')
+    }
+
+    function switchTheme(theme) {
+      document.getElementById('theme').href = (theme == 'dark' ? "http:\/\/localhost:1313\/Despairendipity\/dark.min.5114c62348434e1065911b055f0f10ce23c81c38cec0a28ec43fe3fc065fb3db.css" : "")
+      document.getElementById('syntax-theme').href = (theme == 'dark' ? '\/syntax-dark.css' : '\/syntax.css')
+      localStorage.setItem('theme', theme)
+    }
+
+    async function toggleSearch() {
+      var searchDiv = document.getElementById('search')
+      if (window.getComputedStyle(searchDiv).display == 'none') {
+        searchDiv.style.display = 'block'
+        window.scrollTo({ top: 0 });
+        document.getElementById('search-bar').focus()
+      } else {
+        searchDiv.style.display = 'none'  
+      }
+
+      if (!index) {
+        const response = await fetch('\/searchindex.json')
+        const pages = await response.json()
+        index = lunr(function() {
+          this.use(lunr.multiLanguage('en', 'ru'))
+          this.field('title', { boost: 5 })
+          this.field('content', { boost: 1 })
+          pages.forEach(function(doc) {
+            this.add(doc)
+            articles.push(doc)
+          }, this)
+        })
+      }
+    }
+
+    var articles = []
+    var index = undefined
+
+    function search() {
+      var query = document.getElementById('search-bar').value
+      var resultsDiv = document.getElementById('search-results')
+      var countDiv = document.getElementById('search-count')
+      
+      if (query == '') {
+        resultsDiv.innerHTML = ''
+        countDiv.innerHTML = ''
+        return
+      }
+      
+      var results = index.search(query)
+
+      countDiv.innerHTML = 'Found <b>' + results.length + '</b> pages'
+
+      let resultList = ''
+
+      for (const n in results) {
+        const item = articles[results[n].ref]
+        resultList += '<li><a href="' + item.path + '">' + item.title + '</a> <p>'
+        const text = item.content
+
+        const contextLimit = 80
+
+        if (text.includes(query)) {
+          const start = text.indexOf(query)
+          if (start > contextLimit)
+            resultList += '…'
+          resultList += text.substring(start - contextLimit, start)
+                      + '<b>' + query + '</b>' + text.substring(start + query.length, start + query.length + contextLimit)
+
+        } else {
+          resultList += text.substring(0, contextLimit * 2)
+        }
+        resultList += '…</p></li>'
+      }
+
+      resultsDiv.innerHTML = resultList
+    }
+
+    if (localStorage.getItem('theme') == 'dark') {
+      switchTheme('dark')
+    }
+
+    window.addEventListener('load', function() {
+      var el = document.getElementById("active-element")
+      if (el) {
+        el.scrollIntoView({block: "center"})
+      }
+    })
+
+    window.addEventListener('scroll', function() {
+      var menu = document.getElementById('menu')
+      if (window.scrollY < 120) {
+        menu.classList.remove('scrolled')
+      } else {
+        menu.classList.add('scrolled')
+      }
+    })
+
+    window.addEventListener('keydown', function(e) {
+      if (e.altKey) { return }
+      if (document.activeElement.tagName == 'INPUT') { return }
+      if (e.key == 'ArrowLeft') {
+        document.getElementById('prev-article').click()
+      } else if (e.key == 'ArrowRight') {
+        document.getElementById('next-article').click()
+      }
+    })
+  </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  })"></script>
+
+  
+  <title>不等式: 基本的な性質と例 - Despairendipity</title>
+</head>
+<body><nav id='sidebar' >
+  
+  
+  <div class='title'>
+    <a href='http://localhost:1313/Despairendipity/'>Despairendipity</a>
+    
+  </div>
+  <ul>
+    
+      
+    
+  </ul>
+</nav>
+<div id='wrapper' ><menu id='menu'>
+  
+  
+  <div class='left'>
+    <a>
+      <img src='http://localhost:1313/Despairendipity/icons/bars-solid.svg'
+           onclick='toggleSidebar()'
+           title='open table of contents'>
+    </a>
+    <a>
+      <img src='http://localhost:1313/Despairendipity/icons/adjust-solid.svg'
+           style='position: relative; top: -1px'
+           onclick='switchTheme(localStorage.getItem("theme") == "dark" ? "light" : "dark")'
+           title='dark theme'>
+    </a>
+    <a>
+      <img src='http://localhost:1313/Despairendipity/icons/search-solid.svg'
+           onclick='toggleSearch()'
+           title='search'>
+    </a>
+    <a class="language-switch">
+      <img src='http://localhost:1313/Despairendipity/icons/language-solid.svg'
+           onclick='toggleLanguageMenu(event)'
+           title='change language'>
+    </a>
+    <ul id="language-menu" class="dropdown-menu">
+      
+        <li><a href="http://localhost:1313/Despairendipity/en/">en</a></li>
+      
+        <li><a href="http://localhost:1313/Despairendipity/jp/">jp</a></li>
+      
+        <li><a href="http://localhost:1313/Despairendipity/ru/">ru</a></li>
+      
+    </ul>
+  </div>
+  <div class='title'>不等式: 基本的な性質と例</div>
+  <div class='right'>
+    <a onClick='window.print()'>
+      <img src='http://localhost:1313/Despairendipity/icons/print-solid.svg' title='print'>
+    </a>
+
+    <a href='https://github.com/Roboticist-git/Despairendipity' class='github-main'>
+      <img src='http://localhost:1313/Despairendipity/icons/github-brands.svg' title='View on GitHub'>
+    </a>    
+  </div>
+</menu>
+
+<script>
+  function toggleLanguageMenu(event) {
+    event.stopPropagation(); 
+    var menu = document.getElementById("language-menu");
+    menu.classList.toggle("visible");
+  }
+
+  document.addEventListener("click", function(event) {
+    var menu = document.getElementById("language-menu");
+    if (!event.target.closest(".language-switch")) {
+      menu.classList.remove("visible");
+    }
+  });
+</script>
+
+<style>
+  .language-switch {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 30px;
+    background: #222;
+    padding: 5px;
+    border-radius: 5px;
+    list-style: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .dropdown-menu.visible {
+    display: block;
+  }
+
+  .dropdown-menu li {
+    padding: 5px;
+  }
+
+  .dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-menu li a:hover {
+    background: #333;
+  }
+</style>
+<main>
+        <div id="search">
+    <input id="search-bar" type="search" placeholder='Search this book…' oninput="search()">
+    <div id="search-count"></div>
+    <div id="search-results">
+    </div>
+</div>
+<header>
+  
+  <h1>不等式: 基本的な性質と例</h1>
+  
+    <div class='info'><div>
+          <span>updated</span>
+          <span>Feb 9, 2025</span>
+        </div>
+      <div>
+          <span>translations</span>
+          
+            <span><a href="http://localhost:1313/Despairendipity/lessons/algebra/inequality/">en: Inequalities: Basic Properties and Examples</a></span>
+          
+            <span><a href="http://localhost:1313/Despairendipity/ru/lessons/algebra/inequality/">ru: Неравенства: Основные свойства и примеры</a></span>
+          
+        </div></div>
+  
+</header>
+<article>
+  
+
+
+  
+    
+    
+      
+        <span class='anchor' id="第1部"></span>
+<h1><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/algebra/inequality/#%e7%ac%ac1%e9%83%a8">#</a>第1部</h1><p>これは最初のテーマです。不等式の問題を解く際に、多くの人が困難に直面します。ある数が別の数より大きい理由を理解するのが難しい人もいます。しかし、現実世界では誰もが不等式に直面するため、このトピックは重要です。</p>
+<span class='anchor' id="基本的な性質"></span>
+<h2><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/algebra/inequality/#%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa%e6%80%a7%e8%b3%aa">#</a>基本的な性質</h2>
+      
+    
+  
+
+  
+    $$
+    
 \begin{cases}
 a < b \\[10pt]
 b < c
 \end{cases}
 \quad \implies \quad a < c \tag{1}
-$$
-$$
+
+    $$
+  
+
+  
+    
+    
+      
+        
+      
+    
+  
+
+  
+    $$
+    
 a < b \implies a \pm m < b \pm m \tag{2}
-$$
-$$
+
+    $$
+  
+
+  
+    
+    
+      
+        
+      
+    
+  
+
+  
+    $$
+    
 a < b \quad\iff\quad -a > -b \tag{3}
-$$<p><figure><img src=https://roboticist-git.github.io/Despairendipity/data/lineX.svg><figcaption></figcaption></figure></p><p>なお、(3) より、$-a$ から 0 までの距離と、0 から $a$ までの距離は等しいことがわかります。したがって、<strong>符号に関係なく、距離は常に非負の量である</strong> と言えます。現実世界では、2つの物体の間の距離は「存在する」か「存在しない」かのどちらかであり、負の距離は存在しません。このため、<strong>絶対値</strong> という概念が導入されます。これは、ある値が他の値とどれだけ離れているか、またはどれだけ上回っているかを示すものです。（絶対値については別の記事で詳しく説明します。）</p><p><figure><img src=https://roboticist-git.github.io/Despairendipity/data/animation.gif><figcaption></figcaption></figure></p><span class=anchor id=3-から導かれる追加の性質></span><h3><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/algebra/inequality/#3-%e3%81%8b%e3%82%89%e5%b0%8e%e3%81%8b%e3%82%8c%e3%82%8b%e8%bf%bd%e5%8a%a0%e3%81%ae%e6%80%a7%e8%b3%aa>#</a>(3) から導かれる追加の性質</h3>$$
+
+    $$
+  
+
+  
+    
+    
+      
+        <p><figure>
+  <img src="http://localhost:1313/Despairendipity/data/lineX.svg">
+  <figcaption></figcaption>
+</figure>
+</p>
+<p>なお、(3) より、$-a$ から 0 までの距離と、0 から $a$ までの距離は等しいことがわかります。したがって、<strong>符号に関係なく、距離は常に非負の量である</strong> と言えます。現実世界では、2つの物体の間の距離は「存在する」か「存在しない」かのどちらかであり、負の距離は存在しません。このため、<strong>絶対値</strong> という概念が導入されます。これは、ある値が他の値とどれだけ離れているか、またはどれだけ上回っているかを示すものです。（絶対値については別の記事で詳しく説明します。）</p>
+<p><figure>
+  <img src="http://localhost:1313/Despairendipity/data/animation.gif">
+  <figcaption></figcaption>
+</figure>
+</p>
+<span class='anchor' id="3-から導かれる追加の性質"></span>
+<h3><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/algebra/inequality/#3-%e3%81%8b%e3%82%89%e5%b0%8e%e3%81%8b%e3%82%8c%e3%82%8b%e8%bf%bd%e5%8a%a0%e3%81%ae%e6%80%a7%e8%b3%aa">#</a>(3) から導かれる追加の性質</h3>
+      
+    
+  
+
+  
+    $$
+    
 \begin{cases}
 a < b \\[10pt]
 c > 0
 \end{cases}
 \quad \implies \quad a \cdot c < b \cdot c \tag{4}
-$$
-$$
+
+    $$
+  
+
+  
+    
+    
+      
+        
+      
+    
+  
+
+  
+    $$
+    
 \begin{cases}
 a < b \\[10pt]
 c < 0
 \end{cases}
 \quad \implies \quad a \cdot c > b \cdot c \tag{5}
-$$
-<span class=anchor id=いくつかの例></span><h2><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/algebra/inequality/#%e3%81%84%e3%81%8f%e3%81%a4%e3%81%8b%e3%81%ae%e4%be%8b>#</a>いくつかの例</h2><span class=anchor id=1-x2---x---1--0></span><h3><a class=anchor-link href=https://roboticist-git.github.io/Despairendipity/jp/lessons/algebra/inequality/#1-x2---x---1--0>#</a>1. $x^{2} - x - 1 > 0$</h3><p>解く前に、この不等式を <strong>この不等式を満たす関数として表現できる</strong> ことを確認しておきましょう。</p>$$
+
+    $$
+  
+
+  
+    
+    
+      
+        <span class='anchor' id="いくつかの例"></span>
+<h2><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/algebra/inequality/#%e3%81%84%e3%81%8f%e3%81%a4%e3%81%8b%e3%81%ae%e4%be%8b">#</a>いくつかの例</h2><span class='anchor' id="1-x2---x---1--0"></span>
+<h3><a class="anchor-link" href="http://localhost:1313/Despairendipity/jp/lessons/algebra/inequality/#1-x2---x---1--0">#</a>1. $x^{2} - x - 1 &gt; 0$</h3><p>解く前に、この不等式を <strong>この不等式を満たす関数として表現できる</strong> ことを確認しておきましょう。</p>
+      
+    
+  
+
+  
+    $$
+    
 f(x) = y = x^{2} - x - 1 > 0 \quad \implies \quad y > 0
-$$
-<em>解答</em>:<br>方程式 $x^{2} - x - 1 = 0$ の解を求め、関数 $f(x)=x^{2} - x - 1$ のグラフが $Ox$ 軸より上にある領域を特定します。
-$$
+
+    $$
+  
+
+  
+    
+    
+      
+        <em>解答</em>:<br>
+方程式 $x^{2} - x - 1 = 0$ の解を求め、関数 $f(x)=x^{2} - x - 1$ のグラフが $Ox$ 軸より上にある領域を特定します。
+      
+    
+  
+
+  
+    $$
+    
 x^{2} - x - 1 > 0
-$$
-$$
+
+    $$
+  
+
+  
+    
+    
+      
+        
+      
+    
+  
+
+  
+    $$
+    
 D = (-1)^{2} - 4\cdot 1 \cdot (-1) = 1 + 4 = 5
-$$
-$$
+
+    $$
+  
+
+  
+    
+    
+      
+        
+      
+    
+  
+
+  
+    $$
+    
 \begin{cases}
 x_{1} = \frac{-(-1) - \sqrt{5}}{2} = \frac{1 - \sqrt{5}}{2} \\[10pt]
 x_{2} = \frac{-(-1) + \sqrt{5}}{2} = \frac{1 + \sqrt{5}}{2}
 \end{cases}
-$$
-$$
+
+    $$
+  
+
+  
+    
+    
+      
+        
+      
+    
+  
+
+  
+    $$
+    
 (x - x_{1})\cdot (x - x_{2}) > 0 \quad \implies \quad \left(x - \frac{1+\sqrt{5}}{2}\right) \cdot \left(x - \frac{1-\sqrt{5}}{2}\right) > 0
-$$<p>図を描きます:</p><p><figure><img src=https://roboticist-git.github.io/Despairendipity/data/StaticParabola_ManimCE_v0.19.0.png><figcaption></figcaption></figure></p><p>最後に、この不等式の解を求めます。これは、グラフの曲線 (<span class=color-switch data-color=yellow>色付きの</span>
-放物線の枝) が $Ox$ 軸の上にある領域です。</p>$$
+
+    $$
+  
+
+  
+    
+    
+      
+        <p>図を描きます:</p>
+<p><figure>
+  <img src="http://localhost:1313/Despairendipity/data/StaticParabola_ManimCE_v0.19.0.png">
+  <figcaption></figcaption>
+</figure>
+</p>
+<p>最後に、この不等式の解を求めます。これは、グラフの曲線 (<span class="color-switch" data-color="yellow">色付きの</span>
+放物線の枝) が $Ox$ 軸の上にある領域です。</p>
+
+      
+    
+  
+
+  
+    $$
+    
 x \in (-\infty; x_{1}) \cup (x_{2}; +\infty)
 \quad \implies \quad
 \boxed{x \in \left(-\infty; \frac{1-\sqrt{5}}{2}\right) \cup \left(\frac{1+\sqrt{5}}{2}; +\infty\right)}
-$$</article><div class=nextprev><div class=left><a href=https://roboticist-git.github.io/Despairendipity/jp/lessons/algebra/ id=prev-article>← ../代数学</a></div><div class=right><a href=https://roboticist-git.github.io/Despairendipity/jp/lessons/geometry/ id=next-article>../幾何学 →</a></div></div></main></div></body></html>
+
+    $$
+  
+
+  
+    
+    
+      
+        
+      
+    
+  
+
+
+
+        </article>
+        <div class='nextprev'>
+  
+    
+      
+      
+        
+      
+
+      
+      
+      
+        
+          
+        
+      
+
+      
+        <div class='left'>
+        
+          <a href='http://localhost:1313/Despairendipity/jp/lessons/algebra/' id='prev-article'>← ../代数学</a>
+        
+        </div>
+        <div class='right'>
+        
+          
+          
+          
+
+          
+            
+          
+            
+              
+            
+          
+            
+          
+            
+          
+        
+          
+            <a href='http://localhost:1313/Despairendipity/jp/lessons/geometry/' id='next-article'>../幾何学 →</a>
+          
+        
+        </div>
+      
+    
+  
+</div>
+
+      </main>
+      
+
+    </div>
+  </body>
+</html>

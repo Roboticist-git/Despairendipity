@@ -4,7 +4,7 @@
   <meta charset="utf-8">
 
   {{ $style := resources.Get "style.sass" | toCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+  <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
   <link rel="stylesheet" href="{{ "/syntax.css" | relURL }}" id="syntax-theme">
 
   <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
@@ -20,7 +20,6 @@
 
   <script>
     function toggleSidebar() {
-      console.log("Toggling sidebar visibility")
       var sidebar = document.getElementById('sidebar')
       var wrapper = document.getElementById('wrapper')
       if (sidebar.classList.contains('sidebar-toggled') || window.getComputedStyle(sidebar).display == 'block') { 
@@ -32,15 +31,12 @@
     }
 
     function switchTheme(theme) {
-      console.log("Changing theme:", theme)
-      document.getElementById('theme').href = (theme == 'dark' ? "{{ $dark.RelPermalink }}" : "")
+      document.getElementById('theme').href = (theme == 'dark' ? "{{ $dark.Permalink }}" : "")
       document.getElementById('syntax-theme').href = (theme == 'dark' ? '{{ "/syntax-dark.css" | relURL }}' : '{{ "/syntax.css" | relURL }}')
       localStorage.setItem('theme', theme)
     }
 
     async function toggleSearch() {
-      console.log("Toggling search")
-      
       var searchDiv = document.getElementById('search')
       if (window.getComputedStyle(searchDiv).display == 'none') {
         searchDiv.style.display = 'block'
@@ -51,23 +47,17 @@
       }
 
       if (!index) {
-        console.log("Fetching index")
         const response = await fetch('{{ "/searchindex.json" | relURL }}')
         const pages = await response.json()
         index = lunr(function() {
           this.use(lunr.multiLanguage('en', 'ru'))
-          this.field('title', {
-            boost: 5
-          })
-          this.field('content', {
-            boost: 1
-          })
+          this.field('title', { boost: 5 })
+          this.field('content', { boost: 1 })
           pages.forEach(function(doc) {
             this.add(doc)
             articles.push(doc)
           }, this)
         })
-        console.log("Ready to search")
       }
     }
 
@@ -120,24 +110,16 @@
 
     window.addEventListener('load', function() {
       var el = document.getElementById("active-element")
-      //console.log(el)
       if (el) {
         el.scrollIntoView({block: "center"})
       }
-      /*
-      if (window.innerWidth < 1000) {
-        console.log("Hiding sidebar because window is too small")
-        toggleSidebar()
-      }*/
     })
 
     window.addEventListener('scroll', function() {
       var menu = document.getElementById('menu')
       if (window.scrollY < 120) {
-        //console.log("Hiding title")
         menu.classList.remove('scrolled')
       } else {
-        //console.log("Showing title")
         menu.classList.add('scrolled')
       }
     })

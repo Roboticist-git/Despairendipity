@@ -1,1 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on Despairendipity</title><link>https://roboticist-git.github.io/Despairendipity/jp/categories/</link><description>Recent content in Categories on Despairendipity</description><generator>Hugo</generator><language>jp</language><atom:link href="https://roboticist-git.github.io/Despairendipity/jp/categories/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Despairendipity</title>
+    <link>http://localhost:1313/Despairendipity/jp/categories/</link>
+    <description>Recent content in Categories on Despairendipity</description>
+    <generator>Hugo</generator>
+    <language>jp</language>
+    <atom:link href="http://localhost:1313/Despairendipity/jp/categories/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

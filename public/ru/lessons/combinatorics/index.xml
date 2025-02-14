@@ -1,6 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Комбинаторика on Despairendipity</title><link>https://roboticist-git.github.io/Despairendipity/ru/lessons/combinatorics/</link><description>Recent content in Комбинаторика on Despairendipity</description><generator>Hugo</generator><language>ru</language><lastBuildDate>Mon, 10 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://roboticist-git.github.io/Despairendipity/ru/lessons/combinatorics/index.xml" rel="self" type="application/rss+xml"/><item><title>Комбинаторика</title><link>https://roboticist-git.github.io/Despairendipity/ru/lessons/combinatorics/combinatorics_i/</link><pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate><guid>https://roboticist-git.github.io/Despairendipity/ru/lessons/combinatorics/combinatorics_i/</guid><description>&lt;span class='anchor' id="часть-i">&lt;/span>
-&lt;h1>&lt;a class="anchor-link" href="https://roboticist-git.github.io/Despairendipity/ru/lessons/combinatorics/combinatorics_i/#%d1%87%d0%b0%d1%81%d1%82%d1%8c-i">#&lt;/a>Часть I.&lt;/h1>&lt;p>Что такое комбинаторика? Это раздел математики, изучающий способы выбора, упорядочивания и подсчёта различных конфигураций элементов. Что можно считать &amp;ldquo;элементами&amp;rdquo;? Это могут быть как физические объекты, так и абстрактные математические сущности, например, числа, множества или графы.&lt;/p>
-&lt;p>Тут разберём основные принципы комбинаторики: принципы сложения, умножения, а также понятие &lt;strong>перестановок&lt;/strong>, &lt;strong>сочетаний&lt;/strong>, &lt;strong>размещений&lt;/strong>&lt;/p>
-&lt;span class='anchor' id="принцип-сложения">&lt;/span>
-&lt;h4>&lt;a class="anchor-link" href="https://roboticist-git.github.io/Despairendipity/ru/lessons/combinatorics/combinatorics_i/#%d0%bf%d1%80%d0%b8%d0%bd%d1%86%d0%b8%d0%bf-%d1%81%d0%bb%d0%be%d0%b6%d0%b5%d0%bd%d0%b8%d1%8f">#&lt;/a>Принцип сложения:&lt;/h4>&lt;p>У нас есть 100 монет (подставьте название валюты какое угодно) чтобы купить поесть.
-Придя в магазин у нас &amp;ldquo;есть выбор&amp;rdquo;: онигири за 99 монет, бургер за 100 монет, а также газировка за 70 монет, кофе за 100 монет, мороженное за 65 монет.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Комбинаторика on Despairendipity</title>
+    <link>http://localhost:1313/Despairendipity/ru/lessons/combinatorics/</link>
+    <description>Recent content in Комбинаторика on Despairendipity</description>
+    <generator>Hugo</generator>
+    <language>ru</language>
+    <lastBuildDate>Mon, 10 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/Despairendipity/ru/lessons/combinatorics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Комбинаторика</title>
+      <link>http://localhost:1313/Despairendipity/ru/lessons/combinatorics/combinatorics_i/</link>
+      <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/Despairendipity/ru/lessons/combinatorics/combinatorics_i/</guid>
+      <description>&lt;span class=&#39;anchor&#39; id=&#34;часть-i&#34;&gt;&lt;/span&gt;&#xA;&lt;h1&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/ru/lessons/combinatorics/combinatorics_i/#%d1%87%d0%b0%d1%81%d1%82%d1%8c-i&#34;&gt;#&lt;/a&gt;Часть I.&lt;/h1&gt;&lt;p&gt;Что такое комбинаторика? Это раздел математики, изучающий способы выбора, упорядочивания и подсчёта различных конфигураций элементов. Что можно считать &amp;ldquo;элементами&amp;rdquo;? Это могут быть как физические объекты, так и абстрактные математические сущности, например, числа, множества или графы.&lt;/p&gt;&#xA;&lt;p&gt;Тут разберём основные принципы комбинаторики: принципы сложения, умножения, а также понятие &lt;strong&gt;перестановок&lt;/strong&gt;, &lt;strong&gt;сочетаний&lt;/strong&gt;, &lt;strong&gt;размещений&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;span class=&#39;anchor&#39; id=&#34;принцип-сложения&#34;&gt;&lt;/span&gt;&#xA;&lt;h4&gt;&lt;a class=&#34;anchor-link&#34; href=&#34;http://localhost:1313/Despairendipity/ru/lessons/combinatorics/combinatorics_i/#%d0%bf%d1%80%d0%b8%d0%bd%d1%86%d0%b8%d0%bf-%d1%81%d0%bb%d0%be%d0%b6%d0%b5%d0%bd%d0%b8%d1%8f&#34;&gt;#&lt;/a&gt;Принцип сложения:&lt;/h4&gt;&lt;p&gt;У нас есть 100 монет (подставьте название валюты какое угодно) чтобы купить поесть.&#xA;Придя в магазин у нас &amp;ldquo;есть выбор&amp;rdquo;: онигири за 99 монет, бургер за 100 монет, а также газировка за 70 монет, кофе за 100 монет, мороженное за 65 монет.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
